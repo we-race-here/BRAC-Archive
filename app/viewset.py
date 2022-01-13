@@ -34,5 +34,5 @@ class AcaResultViewSet(viewsets.ModelViewSet):
     queryset = models.AcaResult.objects.all()
     filter_backends = [DjangoFilterBackend, filters.OrderingFilter, filters.SearchFilter]
     filterset_fields = [field.name for field in models.AcaResult._meta.fields]
-    search_fields = ['event__name']
+    search_fields = ['eventid__name']
     http_method_names = ['get']

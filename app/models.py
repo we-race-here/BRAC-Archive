@@ -461,7 +461,7 @@ class AcaRacegrouptemplatemap(models.Model):
 
 class AcaResult(models.Model):
     racerid = models.ForeignKey('AcaUser', models.DO_NOTHING, db_column='racerId', blank=True, null=True, related_name='racer')  # Field name made lowercase.
-    eventid = models.ForeignKey(AcaEvent, models.DO_NOTHING, db_column='eventId', blank=True, null=True, related_name='event')  # Field name made lowercase.
+    eventid = models.ForeignKey(AcaEvent, models.DO_NOTHING, db_column='eventId', blank=True, null=True)  # Field name made lowercase.
     eventracegroupid = models.ForeignKey(AcaRacegroup, models.DO_NOTHING, db_column='eventRaceGroupId', blank=True, null=True)  # Field name made lowercase.
     rsplace = models.IntegerField(db_column='rsPlace', blank=True, null=True)  # Field name made lowercase.
     place = models.IntegerField(blank=True, null=True)

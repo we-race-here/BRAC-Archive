@@ -69,8 +69,9 @@
           headers: [
             { text: "First Name", value: "firstname" },
             { text: "Last Name", value: "lastname" },
-            { text: "Zip Code", value: "zip" },
-            { text: "Actions", value: "action" },
+            { text: "City", value: "city" },
+            { text: "State", value: "state" },
+            { text: "View Result", value: "action" },
           ],
 
           Eventheaders: [
@@ -154,7 +155,7 @@
           },
           getUsers(event) {
             this.UserLoader = true;
-            fetch(this.FormURL(event, "/AcaUser/?fields=id,firstname,lastname,zip")+"&search=" + this.Usersearch, {
+            fetch(this.FormURL(event, "/AcaUser/?fields=id,firstname,lastname,city,state,view_result")+"&search=" + this.Usersearch, {
               method: "GET",
             })
               .then((response) => {
@@ -196,7 +197,7 @@
           getAcaResult(event) {
             this.AcaResult = []
             this.AcaResultLoader = true;
-            fetch(this.FormURL(event, "/AcaResult/?fields=id,racerid,eventid,place")+"&search=" + this.AcaRaceGroupsearch, {
+            fetch(this.FormURL(event, "/AcaResult/?fields=id,racerid,eventid,place")+"&search=" + this.AcaResultsearch, {
               method: "GET",
             })
               .then((response) => {

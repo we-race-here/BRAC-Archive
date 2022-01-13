@@ -6,6 +6,12 @@ from drf_queryfields import QueryFieldsMixin
 
 
 class AcaUserSerailizers(QueryFieldsMixin,serializers.ModelSerializer):
+    view_result = serializers.SerializerMethodField(method_name="getResult", read_only=True)
+    def getResult(self, value):
+        try:
+            return  models.AcaResult.objects.filter(racerid=value.id).count()
+        except Exception as e:
+            return 0
     class Meta:
         model  = models.AcaUser
         fields = '__all__'
@@ -13,7 +19,7 @@ class AcaUserSerailizers(QueryFieldsMixin,serializers.ModelSerializer):
 class AcaEventSerailizers(QueryFieldsMixin,serializers.ModelSerializer):
     def to_representation(self, instance):
         response = super().to_representation(instance)
-        response['eventdate'] = datetime.fromtimestamp(instance.eventdate).strftime('%Y-%m-%d %I:%M %p')
+        response['eventdate'] = datetime.fromtimestamp(instance.eventdate).strftime('%Y-%m-%d')
         return response
     class Meta:
         model  = models.AcaEvent

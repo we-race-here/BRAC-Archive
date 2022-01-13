@@ -127,7 +127,7 @@
                 class="elevation-1"
               >
               <template v-slot:item.action="{ item }">
-                <a @click='selectedUserModal(item)'>View Races</a>
+                <a @click='selectedUserModal(item)'>${item.view_result}</a>
               </template>
             </v-data-table>
             </v-card>
