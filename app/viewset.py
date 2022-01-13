@@ -18,9 +18,9 @@ class AcaUserViewSet(viewsets.ModelViewSet):
         try:
             if self.request.query_params.get('ordering', []) in 'view_result':
                 query = query.annotate(count=Count('racer__id')).order_by('count')
-            if self.request.query_params.get('ordering', []) in '-view_result':
+            elif self.request.query_params.get('ordering', []) in '-view_result':
                 query = query.annotate(count=Count('racer__id')).order_by('-count')
-        except Exception as e: pass
+        except Exception as e: print("Exception", str(e))
         return query
 
 
