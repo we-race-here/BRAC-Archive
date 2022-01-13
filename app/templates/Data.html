@@ -1,0 +1,148 @@
+{% extends 'base.html' %} {% block content %}
+<template>
+  <v-card class="ma-5">
+    <v-toolbar flat color="primary" dark>
+      <v-toolbar-title>coloradocycling.org Data</v-toolbar-title>
+    </v-toolbar>
+    <v-tabs vertical>
+      <v-tab>
+        <v-icon left> mdi-account </v-icon>
+        Users
+      </v-tab>
+      <v-tab>
+        <v-icon left> mdi-party-popper </v-icon>
+        Event
+      </v-tab>
+      <v-tab>
+        <v-icon left> mdi-account-group </v-icon>
+        Race Group
+      </v-tab>
+      <v-tab>
+        <v-icon left> mdi-arm-flex </v-icon>
+        Race Result
+      </v-tab>
+
+      <v-tab-item>
+        <v-card flat>
+          <v-card-text>
+            <v-card>
+              <v-card-title>
+                <v-spacer></v-spacer>
+                <v-text-field
+                  v-model="Usersearch"
+                  append-icon="mdi-magnify"
+                  label="Search"
+                  single-line
+                  hide-details
+                ></v-text-field>
+              </v-card-title>
+              <v-data-table
+                :loading="UserLoader"
+                dense
+                :footer-props="{
+                  'items-per-page-options': [15]
+                }"
+                :headers="headers"
+                :items="AcaUsers.results"
+                item-key="name"
+                :search="Usersearch"
+                :options.sync="pagination_myrequest"
+                :server-items-length="AcaUsers.count"
+                class="elevation-1"
+              ></v-data-table>
+            </v-card>
+          </v-card-text>
+        </v-card>
+      </v-tab-item>
+      <v-tab-item>
+        <v-card flat>
+          <v-card-title>
+            <v-spacer></v-spacer>
+            <v-text-field
+                  v-model="Eventsearch"
+                  append-icon="mdi-magnify"
+                  label="Search"
+                  single-line
+                  hide-details
+                ></v-text-field>
+          </v-card-title>
+         
+              <v-data-table
+                :loading="EventLoader"
+                dense
+                :footer-props="{
+                  'items-per-page-options': [15]
+                }"
+                :headers="Eventheaders"
+                :items="AcaEvent.results"
+                item-key="name"
+                :search="Eventsearch"
+                :options.sync="pagination_events"
+                :server-items-length="AcaEvent.count"
+                class="elevation-1"
+              ></v-data-table>
+          </v-card-text>
+        </v-card>
+      </v-tab-item>
+      <v-tab-item>
+        <v-card flat>
+          <v-card-title>
+            <v-spacer></v-spacer>
+            <v-text-field
+                  v-model="AcaRaceGroupsearch"
+                  append-icon="mdi-magnify"
+                  label="Search"
+                  single-line
+                  hide-details
+                ></v-text-field>
+          </v-card-title>
+         
+              <v-data-table
+                :loading="AcaRaceGroupLoader"
+                dense
+                :footer-props="{
+                  'items-per-page-options': [15]
+                }"
+                :headers="AcaRaceGroupheaders"
+                :items="AcaRaceGroup.results"
+                item-key="name"
+                :search="AcaRaceGroupsearch"
+                :options.sync="pagination_AcaRaceGroup"
+                :server-items-length="AcaRaceGroup.count"
+                class="elevation-1"
+              ></v-data-table>
+        </v-card>
+      </v-tab-item>
+      <v-tab-item>
+        <v-card flat>
+          <v-card-title>
+            <v-spacer></v-spacer>
+            <v-text-field
+                  v-model="AcaResultsearch"
+                  append-icon="mdi-magnify"
+                  label="Search"
+                  single-line
+                  hide-details
+                ></v-text-field>
+          </v-card-title>
+         
+              <v-data-table
+                :loading="AcaResultLoader"
+                dense
+                :footer-props="{
+                  'items-per-page-options': [15]
+                }"
+                :headers="AcaResultheaders"
+                :items="AcaResult.results"
+                item-key="name"
+                :search="AcaResultsearch"
+                :options.sync="pagination_AcaResult"
+                :server-items-length="AcaResult.count"
+                class="elevation-1"
+              ></v-data-table>
+        </v-card>
+      </v-tab-item>
+    </v-tabs>
+  </v-card>
+</template>
+{% endblock %}

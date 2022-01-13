@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css"
+      rel="stylesheet"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui"
+    />
+    <title>Wrh-Brac</title>
+  </head>
+  <body>
+    {{ AcaUsers|json_script:"AcaUsers"}}
+
+    <div id="app">
+      <v-app>
+        <v-main> {% block content %} {% endblock %} </v-main>
+      </v-app>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script>
+      var AcaUsers = JSON.parse(
+        document.getElementById("AcaUsers").textContent
+      );
+
+      new Vue({
+        el: "#app",
+        vuetify: new Vuetify(),
+        data: () => ({
+
+          AcaUsers: [],
+          pagination_myrequest: {},
+          Usersearch: "",
+          UserLoader: false,
+
+          AcaEvent: [],
+          pagination_events: {},
+          Eventsearch: "",
+          EventLoader: false,
+
+          AcaRaceGroup: [],
+          pagination_AcaRaceGroup: {},
+          AcaRaceGroupsearch: "",
+          AcaRaceGroupLoader: false,
+          
+          AcaResult: [],
+          pagination_AcaResult: {},
+          AcaResultsearch: "",
+          AcaResultLoader: false,
+
+
+          headers: [
+            { text: "First Name", value: "firstname" },
+            { text: "Last Name", value: "lastname" },
+            { text: "Zip Code", value: "zip" },
+          ],
+
+          Eventheaders: [
+            { text: "Event Name", value: "name" },
+            { text: "Event Date", value: "eventdate" },
+            { text: "Event City", value: "eventcity" },
+            { text: "Event State", value: "eventstate" },
+          ],
+          AcaRaceGroupheaders: [
+            { text: "Event Name", value: "name" },
+            { text: "Abbreviation", value: "abbreviation" },
+          ],
+          AcaResultheaders: [
+            { text: "Racer Id", value: "racerid.firstname" },
+            { text: "Event id", value: "eventid.name" },
+            { text: "Event Date", value: "eventid.eventdate" },
+            { text: "place", value: "place" },
+          ],
+        }),
+        watch: {
+          Usersearch(value){
+            this.getUsers({})
+          },
+          Eventsearch(value){
+            this.getEvent({})
+          },
+          AcaRaceGroupsearch(value){
+            this.getAcaRaceGroupsearch({})
+          },
+          AcaResultsearch(value){
+            this.getAcaResult({})
+          },
+          pagination_myrequest: {
+            handler(value) {
+              this.getUsers(value);
+            },
+            deep: true,
+          },
+          pagination_events: {
+            handler(value) {
+              this.getEvent(value);
+            },
+            deep: true,
+          },
+          pagination_AcaRaceGroup: {
+            handler(value) {
+              this.getAcaRaceGroupsearch(value);
+            },
+            deep: true,
+          },
+          pagination_AcaResult: {
+            handler(value) {
+              this.getAcaResult(value);
+            },
+            deep: true,
+          },
+        },
+        mounted() {},
+        methods: {
+          FormURL(event, endpoint) {
+            var query_param = "";
+            var link = endpoint;
+            try{
+              // Ordering Logic
+            if (event.sortBy.length >= 1) {
+              for (var [i, v] of event.sortBy.entries()) {
+                if (event.sortDesc[i]) {
+                  query_param += "&ordering=-" + v + "&";
+                } else {
+                  query_param += "&ordering=" + v + "&";
+                }
+              }
+            }
+            // Pagination
+            link += "&page=" + event.page;
+            return link + query_param;
+            }
+            catch(err){
+              return link
+            }
+          },
+          getUsers(event) {
+            this.UserLoader = true;
+            fetch(this.FormURL(event, "/AcaUser/?fields=id,firstname,lastname,zip")+"&search=" + this.Usersearch, {
+              method: "GET",
+            })
+              .then((response) => {
+                return response.json();
+              })
+              .then((data) => {
+                this.AcaUsers = data;
+                this.UserLoader = false;
+              });
+          },
+          getEvent(event) {
+            this.AcaEvent = []
+            this.EventLoader = true;
+            fetch(this.FormURL(event, "/AcaEvent/?fields=id,name,eventcity,eventstate")+"&search=" + this.Eventsearch, {
+              method: "GET",
+            })
+              .then((response) => {
+                return response.json();
+              })
+              .then((data) => {
+                this.AcaEvent = data;
+                this.EventLoader = false;
+              });
+          },
+          getAcaRaceGroupsearch(event) {
+            this.AcaRaceGroup = []
+            this.AcaRaceGroupLoader = true;
+            fetch(this.FormURL(event, "/AcaRacegroup/?fields=id,name,abbreviation")+"&search=" + this.AcaRaceGroupsearch, {
+              method: "GET",
+            })
+              .then((response) => {
+                return response.json();
+              })
+              .then((data) => {
+                this.AcaRaceGroup = data;
+                this.AcaRaceGroupLoader = false;
+              });
+          },
+          getAcaResult(event) {
+            this.AcaResult = []
+            this.AcaResultLoader = true;
+            fetch(this.FormURL(event, "/AcaResult/?fields=id,racerid,eventid,place")+"&search=" + this.AcaRaceGroupsearch, {
+              method: "GET",
+            })
+              .then((response) => {
+                return response.json();
+              })
+              .then((data) => {
+                this.AcaResult = data;
+                this.AcaResultLoader = false;
+              });
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
