@@ -38,7 +38,12 @@
       new Vue({
         el: "#app",
         vuetify: new Vuetify(),
+        delimiters: ['${', '}'],
         data: () => ({
+          dialog: false,
+          selectedUser: null,
+          UserEvents: [],
+          eventLoader: false,
 
           AcaUsers: [],
           pagination_myrequest: {},
@@ -65,6 +70,7 @@
             { text: "First Name", value: "firstname" },
             { text: "Last Name", value: "lastname" },
             { text: "Zip Code", value: "zip" },
+            { text: "Actions", value: "action" },
           ],
 
           Eventheaders: [
@@ -201,6 +207,26 @@
                 this.AcaResultLoader = false;
               });
           },
+          selectedUserModal(items){
+            this.UserEvents = []
+            this.selectedUser = items
+            this.getUserRaces()
+            this.dialog = true
+            console.log(items)
+          },
+          getUserRaces(){
+            this.eventLoader= true
+            fetch(this.FormURL(event, "/AcaResult/?")+"&racerid=" + this.selectedUser.id, {
+              method: "GET",
+            })
+              .then((response) => {
+                return response.json();
+              })
+              .then((data) => {
+                this.eventLoader = false
+                this.UserEvents = data
+              });
+          }
         },
       });
     </script>
