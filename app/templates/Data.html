@@ -127,7 +127,7 @@
                 :server-items-length="AcaUsers.count"
                 class="elevation-1"
               >
-              <template v-slot:item.action="{ item }">
+              <template v-slot:item.view_result="{ item }">
                 <a @click='selectedUserModal(item)'>${item.view_result}</a>
               </template>
             </v-data-table>

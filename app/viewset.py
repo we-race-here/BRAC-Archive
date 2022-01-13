@@ -1,3 +1,4 @@
+from django.db.models import Sum, Count
 from django_filters.rest_framework import DjangoFilterBackend
 
 from . import (models, serializers)
@@ -11,6 +12,16 @@ class AcaUserViewSet(viewsets.ModelViewSet):
     filterset_fields = [field.name for field in models.AcaUser._meta.fields]
     search_fields = ['firstname', 'lastname']
     http_method_names = ['get']
+
+    def get_queryset(self):
+        query = super().get_queryset()
+        try:
+            if self.request.query_params.get('ordering', []) in 'view_result':
+                query = query.annotate(count=Count('racer__id')).order_by('count')
+            if self.request.query_params.get('ordering', []) in '-view_result':
+                query = query.annotate(count=Count('racer__id')).order_by('-count')
+        except Exception as e: pass
+        return query
 
 
 class AcaEventViewSet(viewsets.ModelViewSet):
