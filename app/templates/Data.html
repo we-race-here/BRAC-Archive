@@ -2,6 +2,7 @@
 <template>
   <div class="text-center">
     <v-dialog
+    scrollable
       v-model="dialog"
       
     >
@@ -24,7 +25,7 @@
           <div >
             <!-- <b>->> ${UserEvents}</b> -->
            <v-row class="ma-0 pa-0">
-             <v-col class="mt-2 ma-0 pa-0" v-for="i in UserEvents.results">
+             <v-col class="mt-2 ma-0 pa-0" v-for="i in UserEvents">
               <v-card
               class="ma-0 pa-0"
               max-width="200"

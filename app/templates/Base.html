@@ -217,7 +217,7 @@
           },
           getUserRaces(){
             this.eventLoader= true
-            fetch(this.FormURL(event, "/AcaResult/?")+"&racerid=" + this.selectedUser.id, {
+            fetch(this.FormURL(event, "/AcaResultNoPage/?")+"&racerid=" + this.selectedUser.id, {
               method: "GET",
             })
               .then((response) => {

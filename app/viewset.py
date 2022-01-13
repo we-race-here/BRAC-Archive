@@ -36,3 +36,12 @@ class AcaResultViewSet(viewsets.ModelViewSet):
     filterset_fields = [field.name for field in models.AcaResult._meta.fields]
     search_fields = ['eventid__name']
     http_method_names = ['get']
+
+class AcaResultNoPageViewSet(viewsets.ModelViewSet):
+    serializer_class = serializers.AcaResultEventSerailizers
+    queryset = models.AcaResult.objects.all()
+    pagination_class = None
+    filter_backends = [DjangoFilterBackend, filters.OrderingFilter, filters.SearchFilter]
+    filterset_fields = [field.name for field in models.AcaResult._meta.fields]
+    search_fields = ['eventid__name']
+    http_method_names = ['get']
