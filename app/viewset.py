@@ -1,7 +1,11 @@
+from datetime import datetime
+
 from django.db.models import Sum, Count
 from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework.decorators import action
+from rest_framework.response import Response
 
-from . import (models, serializers)
+from . import (models, serializers, Customfilters)
 from rest_framework import viewsets, mixins, filters
 
 
@@ -23,6 +27,9 @@ class AcaUserViewSet(viewsets.ModelViewSet):
         except Exception as e: print("Exception", str(e))
         return query
 
+class AcaResultsetViewSet(viewsets.ModelViewSet):
+    serializer_class = serializers.AcaResultsetSerailizers
+    queryset = models.AcaResultset.objects.all()
 
 class AcaEventViewSet(viewsets.ModelViewSet):
     serializer_class = serializers.AcaEventSerailizers
@@ -31,6 +38,31 @@ class AcaEventViewSet(viewsets.ModelViewSet):
     filterset_fields = [field.name for field in models.AcaEvent._meta.fields]
     search_fields = ['name', 'description']
     http_method_names = ['get']
+    filterset_class = Customfilters.EventFilter
+
+    @action(detail=False, methods=['get'])
+    def get_years(self, request):
+        years = set([i.year for i in models.AcaEvent.objects.filter().order_by('-eventdatetime').values_list('eventdatetime', flat=True)])
+        return Response(sorted(years))
+
+    @action(detail=True, methods=['get'])
+    def get_groups(self, request,pk):
+        return Response(serializers.AcaResultsetSerailizers(self.get_object().resultset.all(), many=True,context = {'request':request}).data)
+
+class AcaEventViewSetNopage(viewsets.ModelViewSet):
+    serializer_class = serializers.AcaEventSerailizers
+    queryset = models.AcaEvent.objects.all()
+    filter_backends = [DjangoFilterBackend, filters.OrderingFilter, filters.SearchFilter]
+    filterset_fields = [field.name for field in models.AcaEvent._meta.fields]
+    pagination_class = None
+    search_fields = ['name', 'description']
+    http_method_names = ['get']
+    filterset_class = Customfilters.EventFilter
+
+    @action(detail=False, methods=['get'])
+    def get_years(self, request):
+        years = set([i.year for i in models.AcaEvent.objects.filter().order_by('-eventdatetime').values_list('eventdatetime', flat=True)])
+        return Response(sorted(years))
 
 class AcaRacegroupViewSet(viewsets.ModelViewSet):
     serializer_class = serializers.AcaRacegroupAcaEventSerailizers
@@ -47,6 +79,7 @@ class AcaResultViewSet(viewsets.ModelViewSet):
     filterset_fields = [field.name for field in models.AcaResult._meta.fields]
     search_fields = ['eventid__name']
     http_method_names = ['get']
+    filterset_class = Customfilters.AcaResultFilter
 
 class AcaResultNoPageViewSet(viewsets.ModelViewSet):
     serializer_class = serializers.AcaResultEventSerailizers
@@ -56,3 +89,9 @@ class AcaResultNoPageViewSet(viewsets.ModelViewSet):
     filterset_fields = [field.name for field in models.AcaResult._meta.fields]
     search_fields = ['eventid__name']
     http_method_names = ['get']
+
+    @action(detail=False, methods=['get'])
+    def summary_by_racegroup(self, request):
+        # return Response(serializers.AcaResultsetSerailizers(self.get_object().resultset.all(), many=True,
+        #                                                     context={'request': request}).data)
+        return Response([])

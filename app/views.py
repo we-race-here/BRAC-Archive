@@ -7,3 +7,6 @@ from . import models, serializers
 class HomeView(TemplateView):
     template_name = 'Data.html'
 
+class FrontView(TemplateView):
+    template_name = 'index.html'
+

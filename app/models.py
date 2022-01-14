@@ -1,6 +1,4 @@
 from django.db import models
-
-
 class AcaAlias(models.Model):
     alias = models.CharField(max_length=500)
     target_value = models.CharField(max_length=5000)
@@ -155,6 +153,7 @@ class AcaEvent(models.Model):
     description = models.CharField(max_length=255, blank=True, null=True)
     promoter = models.ForeignKey('AcaUser', models.DO_NOTHING, db_column='promoter', blank=True, null=True)
     eventdate = models.IntegerField(db_column='eventDate', blank=True, null=True)  # Field name made lowercase.
+    eventdatetime = models.DateTimeField(blank=True, null=True)  # Field name made lowercase.
     url = models.CharField(max_length=255, blank=True, null=True)
     pdf = models.CharField(max_length=255, blank=True, null=True)
     eventtype = models.CharField(db_column='eventType', max_length=255, blank=True, null=True)  # Field name made lowercase.
@@ -187,7 +186,7 @@ class AcaEventclub(models.Model):
 
 
 class AcaEventphotographer(models.Model):
-    eventid = models.ForeignKey(AcaEvent, models.DO_NOTHING, db_column='eventId', blank=True, null=True)  # Field name made lowercase.
+    eventid = models.ForeignKey(AcaEvent, models.DO_NOTHING, db_column='eventId', blank=True, null=True, related_name='eventphoto')  # Field name made lowercase.
     text = models.CharField(max_length=255, blank=True, null=True)
     url = models.CharField(max_length=255, blank=True, null=True)
 
@@ -225,7 +224,7 @@ class AcaEventpointscompetition(models.Model):
 
 
 class AcaEventracegroup(models.Model):
-    eventid = models.ForeignKey(AcaEvent, models.DO_NOTHING, db_column='eventId', blank=True, null=True)  # Field name made lowercase.
+    eventid = models.ForeignKey(AcaEvent, models.DO_NOTHING, db_column='eventId', blank=True, null=True, related_name='racegroup')  # Field name made lowercase.
     racegroupid = models.ForeignKey('AcaRacegroup', models.DO_NOTHING, db_column='raceGroupId', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
@@ -481,7 +480,7 @@ class AcaResult(models.Model):
 
 class AcaResultset(models.Model):
     name = models.CharField(max_length=255, blank=True, null=True)
-    eventid = models.ForeignKey(AcaEvent, models.DO_NOTHING, db_column='eventId', blank=True, null=True)  # Field name made lowercase.
+    eventid = models.ForeignKey(AcaEvent, models.DO_NOTHING, db_column='eventId', blank=True, null=True, related_name='resultset')  # Field name made lowercase.
     starters = models.IntegerField(blank=True, null=True)
     published = models.IntegerField(blank=True, null=True)
     finishphoto = models.CharField(db_column='finishPhoto', max_length=255, blank=True, null=True)  # Field name made lowercase.
@@ -492,7 +491,7 @@ class AcaResultset(models.Model):
 
 
 class AcaResultsetracegroup(models.Model):
-    resultsetid = models.ForeignKey(AcaResultset, models.DO_NOTHING, db_column='resultSetId', blank=True, null=True)  # Field name made lowercase.
+    resultsetid = models.ForeignKey(AcaResultset, models.DO_NOTHING, db_column='resultSetId', blank=True, null=True, related_name='resultsetgroup')  # Field name made lowercase.
     racegroupid = models.IntegerField(db_column='raceGroupId', blank=True, null=True)  # Field name made lowercase.
     starters = models.IntegerField(blank=True, null=True)
     ugtype = models.CharField(db_column='ugType', max_length=2, blank=True, null=True)  # Field name made lowercase.

@@ -275,7 +275,7 @@ class Migration(migrations.Migration):
                 ('counts', models.IntegerField(blank=True, null=True)),
                 ('special', models.CharField(blank=True, max_length=45, null=True)),
             ],
-            options={
+                options={
                 'db_table': 'aca_pointscompetitionraceresult',
             },
         ),
