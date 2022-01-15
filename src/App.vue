@@ -20,16 +20,14 @@
           </v-card>
         </v-col>
         <v-col cols="12" sm="6" class="mt-5">
-          <v-menu
+          <!-- <v-menu
             open-on-hover
             offset-y
             rounded="lg"
             transition="scale-transition"
           >
             <template v-slot:activator="{ on, attrs }">
-              <!-- <v-btn color="primary"  >
-                Scale Transition
-              </v-btn> -->
+
               <a v-bind="attrs" v-on="on"
                 >Events <v-icon color="primary">mdi-chevron-down</v-icon></a
               >
@@ -43,7 +41,7 @@
                 <v-list-item-title>Races Only</v-list-item-title>
               </v-list-item>
             </v-list>
-          </v-menu>
+          </v-menu> -->
           <v-menu
             open-on-hover
             offset-y
@@ -65,16 +63,14 @@
               </v-list-item>              
             </v-list>
           </v-menu>
-          <v-menu
+          <!-- <v-menu
             open-on-hover
             offset-y
             rounded="lg"
             transition="scale-transition"
           >
             <template v-slot:activator="{ on, attrs }">
-              <!-- <v-btn color="primary"  >
-                Scale Transition
-              </v-btn> -->
+
               <a class="ml-5" v-bind="attrs" v-on="on"
                 >Programs <v-icon color="primary">mdi-chevron-down</v-icon></a
               >
@@ -88,17 +84,15 @@
                 <v-list-item-title>Races Only</v-list-item-title>
               </v-list-item>
             </v-list>
-          </v-menu>
-          <v-menu
+          </v-menu> -->
+          <!-- <v-menu
             open-on-hover
             offset-y
             rounded="lg"
             transition="scale-transition"
           >
             <template v-slot:activator="{ on, attrs }">
-              <!-- <v-btn color="primary"  >
-                Scale Transition
-              </v-btn> -->
+
               <a class="ml-5" v-bind="attrs" v-on="on"
                 >Resources <v-icon color="primary">mdi-chevron-down</v-icon></a
               >
@@ -112,17 +106,15 @@
                 <v-list-item-title>Races Only</v-list-item-title>
               </v-list-item>
             </v-list>
-          </v-menu>
-          <v-menu
+          </v-menu> -->
+          <!-- <v-menu
             open-on-hover
             offset-y
             rounded="lg"
             transition="scale-transition"
           >
             <template v-slot:activator="{ on, attrs }">
-              <!-- <v-btn color="primary"  >
-                Scale Transition
-              </v-btn> -->
+
               <a class="ml-5" v-bind="attrs" v-on="on"
                 >About <v-icon color="primary">mdi-chevron-down</v-icon></a
               >
@@ -136,17 +128,15 @@
                 <v-list-item-title>Races Only</v-list-item-title>
               </v-list-item>
             </v-list>
-          </v-menu>
-          <v-menu
+          </v-menu> -->
+          <!-- <v-menu
             open-on-hover
             offset-y
             rounded="lg"
             transition="scale-transition"
           >
             <template v-slot:activator="{ on, attrs }">
-              <!-- <v-btn color="primary"  >
-                Scale Transition
-              </v-btn> -->
+
               <a class="ml-5" v-bind="attrs" v-on="on"
                 >News <v-icon color="primary">mdi-chevron-down</v-icon></a
               >
@@ -160,7 +150,7 @@
                 <v-list-item-title>Races Only</v-list-item-title>
               </v-list-item>
             </v-list>
-          </v-menu>
+          </v-menu> -->
 
           <!-- <v-btn class="ml-5" small color="primary">Login</v-btn> -->
         </v-col>
