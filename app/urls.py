@@ -4,8 +4,8 @@ from . import (views, router)
 
 
 urlpatterns = [
-    path('', views.HomeView.as_view()),
-    path('coloradocycling', views.FrontView.as_view()),
+    # path('', views.HomeView.as_view()),
+    path('', views.FrontView.as_view()),
 ]
 
 urlpatterns += router.router.urls
