@@ -50,6 +50,33 @@ class AcaResultsetSerailizers(QueryFieldsMixin,serializers.ModelSerializer):
         model  = models.AcaResultset
         fields = '__all__'
 
+class AcaPointscompetitionSerailizers(QueryFieldsMixin,serializers.ModelSerializer):
+    def to_representation(self, instance):
+        response = super().to_representation(instance)
+        try:
+            response['lastrun'] = datetime.fromtimestamp(instance.lastrun).strftime('%Y-%m-%d %H:%M:%S')
+        except Exception as e:pass
+        return response
+    class Meta:
+        model  = models.AcaPointscompetition
+        fields = '__all__'
+
+class AcaPointscompetitionraceresultSerailizers(QueryFieldsMixin,serializers.ModelSerializer):
+
+    class Meta:
+        model  = models.AcaPointscompetitionraceresult
+        fields = '__all__'
+
+class AcaPointscompetitionresulterailizers(QueryFieldsMixin,serializers.ModelSerializer):
+    racegroupname = serializers.SerializerMethodField(method_name="getracegroupname", read_only=True)
+    def getracegroupname(self, value):
+        try:
+            return models.AcaPointscompetitionraceresult.objects.filter(racegroupid=value.racegroupid).first().racegroupname
+        except Exception as e: print("Exception", str(e))
+    class Meta:
+        model  = models.AcaPointscompetitionresult
+        fields = '__all__'
+
 
 class AcaResultEventSerailizers(QueryFieldsMixin,serializers.ModelSerializer):
     racerid = AcaUserSerailizers()

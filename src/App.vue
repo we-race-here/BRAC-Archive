@@ -185,7 +185,10 @@ export default {
   data: () => ({
     //
     Results: [
-      {"name": "Road", "url": "road"}
+      {"name": "Road", "url": "Road"},
+      {"name": "Road Cup", "url": "RoadCup"},
+      {"name": "Road Cup Team", "url": "RoadCupTeam"},
+      {"name": "Cross", "url": "Cross"},
     ]
   }),
 };

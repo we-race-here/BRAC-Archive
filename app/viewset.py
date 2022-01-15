@@ -31,6 +31,27 @@ class AcaResultsetViewSet(viewsets.ModelViewSet):
     serializer_class = serializers.AcaResultsetSerailizers
     queryset = models.AcaResultset.objects.all()
 
+class AcaPointscompetitionViewSet(viewsets.ModelViewSet):
+    serializer_class = serializers.AcaPointscompetitionSerailizers
+    queryset = models.AcaPointscompetition.objects.all()
+    filter_backends = [DjangoFilterBackend, filters.OrderingFilter, filters.SearchFilter]
+    filterset_fields = [field.name for field in models.AcaPointscompetition._meta.fields]
+    pagination_class = None
+
+class AcaPointscompetitionraceresultViewSet(viewsets.ModelViewSet):
+    serializer_class = serializers.AcaPointscompetitionraceresultSerailizers
+    queryset = models.AcaPointscompetitionraceresult.objects.all()
+    filter_backends = [DjangoFilterBackend, filters.OrderingFilter, filters.SearchFilter]
+    filterset_fields = [field.name for field in models.AcaPointscompetitionraceresult._meta.fields]
+    pagination_class = None
+
+class AcaPointscompetitionresultViewSet(viewsets.ModelViewSet):
+    serializer_class = serializers.AcaPointscompetitionresulterailizers
+    queryset = models.AcaPointscompetitionresult.objects.all()
+    filter_backends = [DjangoFilterBackend, filters.OrderingFilter, filters.SearchFilter]
+    filterset_fields = [field.name for field in models.AcaPointscompetitionresult._meta.fields]
+    pagination_class = None
+
 class AcaEventViewSet(viewsets.ModelViewSet):
     serializer_class = serializers.AcaEventSerailizers
     queryset = models.AcaEvent.objects.all()
