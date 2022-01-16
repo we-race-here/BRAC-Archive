@@ -110,6 +110,7 @@ class AcaResultNoPageViewSet(viewsets.ModelViewSet):
     filterset_fields = [field.name for field in models.AcaResult._meta.fields]
     search_fields = ['eventid__name']
     http_method_names = ['get']
+    filterset_class = Customfilters.AcaResultFilter
 
     @action(detail=False, methods=['get'])
     def summary_by_racegroup(self, request):

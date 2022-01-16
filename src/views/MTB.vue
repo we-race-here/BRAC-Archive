@@ -5,10 +5,10 @@
         <v-card outlined color="rgb( 230, 230, 230 )">
           <v-card-title> </v-card-title>
           <v-card-text>
-            <p class="text-h5">Cross</p>
+            <p class="text-h5">MOUNTAIN RESULTS</p>
             <div class="pl-3 mt-3">
               <h3 style="border-left: 5px solid #1890ff" class="pl-3">
-                BRAC CROSS RESULTS
+                BRAC MTB RESULTS
 
               </h3>
               <v-row class="ml-3 mt-2">
@@ -220,7 +220,7 @@ export default {
     },
     SelectedYear(value) {
       this.EventLoader = true;
-      CycAxios.get("/AcaEventNoPage/?eventtype=52&ordering=-eventdatetime&eventdatetime__year=" + value).then(
+      CycAxios.get("/AcaEventNoPage/?eventtype=59&ordering=-eventdatetime&eventdatetime__year=" + value).then(
         (data) => {
           this.EventLoader = false;
           this.Events = data.data;

@@ -20,7 +20,7 @@
           </v-card>
         </v-col>
         <v-col cols="12" sm="6" class="mt-5">
-          <!-- <v-menu
+          <v-menu
             open-on-hover
             offset-y
             rounded="lg"
@@ -34,14 +34,12 @@
             </template>
 
             <v-list dense outlined>
-              <v-list-item>
+              <v-list-item @click="$router.push('AllEvents')">
                 <v-list-item-title>All Events</v-list-item-title>
               </v-list-item>
-              <v-list-item>
-                <v-list-item-title>Races Only</v-list-item-title>
-              </v-list-item>
+            
             </v-list>
-          </v-menu> -->
+          </v-menu>
           <v-menu
             open-on-hover
             offset-y
@@ -179,6 +177,11 @@ export default {
       {"name": "Road Cup", "url": "RoadCup"},
       {"name": "Road Cup Team", "url": "RoadCupTeam"},
       {"name": "Cross", "url": "Cross"},
+      {"name": "Cross Individual Cup", "url": "CrossCup"},
+      {"name": "Cross Team Cup", "url": "CrossCupTeam"},
+      {"name": "Track Omnium", "url": "Track"},
+      {"name": "Result By Rider", "url": "ResultByRider"},
+      {"name": "MTB", "url": "MTB"},
     ]
   }),
 };
