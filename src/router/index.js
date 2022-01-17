@@ -11,6 +11,7 @@ import Track from '../views/Track.vue'
 import ResultByRider from '../views/ResultByRider.vue'
 import MTB from '../views/MTB.vue'
 import Events from '../views/Events.vue'
+import EventRaces from '../views/EventRaces.vue'
 
 Vue.use(VueRouter)
 
@@ -18,7 +19,6 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    redirect: '/Road',
     component: Home
   },
   {
@@ -70,6 +70,12 @@ const routes = [
     path: '/AllEvents',
     name: 'AllEvents',
     component: Events
+  },
+
+  {
+    path: '/Event/:id',
+    name: 'EventRaces',
+    component: EventRaces
   },
   
   

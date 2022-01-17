@@ -19,11 +19,14 @@ export const helpermixin = {
         { text: "CATEGORY", value: "eventracegroupid.abbreviation" },
         { text: "STARTERS	", value: "STARTERS" },
         { text: "FINISHERS", value: "FINISHERS" },
+        { text: "Details", value: "DEtails" },
       ],
       RaceByCate: [
         { text: "CATEGORY", value: "eventracegroupid.abbreviation" },
         { text: "STARTERS	", value: "STARTERS	" },
         { text: "FINISHERS", value: "FINISHERS" },
+        { text: "Details", value: "DEtails" },
+
       ],
       RaceByCateWithGroup: [
         { text: "Place", value: "place" },

@@ -149,7 +149,7 @@ export default {
 
     Eventheaders: [
       { text: "Event Name", value: "name" },
-      { text: "Event Date", value: "eventdate" },
+      { text: "Event Date", value: "eventdatetime_format" },
       { text: "Event City", value: "eventcity" },
       { text: "Event State", value: "eventstate" },
     ],
@@ -250,7 +250,7 @@ export default {
       this.AcaEvent = [];
       this.EventLoader = true;
       CycAxios.get(
-        this.FormURL(event, "/AcaEvent/?fields=id,name,eventcity,eventstate") +
+        this.FormURL(event, "/AcaEvent/?ordering=-eventdatetime&fields=id,name,eventcity,eventstate,eventdatetime_format") +
           "&search=" +
           this.Eventsearch,
         {

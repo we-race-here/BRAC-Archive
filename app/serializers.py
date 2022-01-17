@@ -23,7 +23,8 @@ class AcaUserSerailizers(QueryFieldsMixin,serializers.ModelSerializer):
 #         return epoch
 
 class AcaEventSerailizers(QueryFieldsMixin,serializers.ModelSerializer):
-    eventdatetime_format =serializers.DateTimeField(source='eventdatetime', format="%Y-%m-%d", required=False, read_only=True)
+    eventdatetime_format =serializers.DateTimeField(source='eventdatetime', format="%d %B, %Y", required=False, read_only=True)
+    promoter = AcaUserSerailizers()
     class Meta:
         model  = models.AcaEvent
         fields = '__all__'
