@@ -28,15 +28,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/cycling/static/img/states_murphy_4.bcc2191c.jpg"
   },
   {
-    "revision": "007264cc3dd54b1147ae",
-    "url": "/cycling/static/js/app.b239fd27.js"
+    "revision": "427ed083ef0d898279a8",
+    "url": "/cycling/static/js/app.057364ba.js"
   },
   {
     "revision": "a4540b6cb1a92899312e",
     "url": "/cycling/static/js/chunk-vendors.0b2158eb.js"
   },
   {
-    "revision": "624fc7db7ff8fe3effd496db1ea973db",
+    "revision": "f5429eadc4ef4bb03f9000dd999eac73",
     "url": "/index.html"
   },
   {

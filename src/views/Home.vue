@@ -13,7 +13,7 @@
         <v-card elevation="0" >
           <v-card-title>
             <h3 style="border-left: 5px solid #1890ff" class="pl-3">
-                Upcoming Races & Events <v-btn small title text @click="$router.push('EventsList')">View Full >></v-btn>
+                Upcoming Races & Events <v-btn small title text @click="$router.push('/Event/all')">View Full >></v-btn>
               </h3>
               </v-card-title>
           <v-card-text class="ma-3 pa-0">
