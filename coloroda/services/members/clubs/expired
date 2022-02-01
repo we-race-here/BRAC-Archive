@@ -1,0 +1,13 @@
+{
+   "data":[
+   {
+      "license":"246803",
+      "firstName":"Amy",
+      "lastName":"Dombroski",
+      "gender":"F",
+      "clubNumber":"399",
+      "clubName":"Young Telenet Fidea Cycling Team",
+      "userExpires":"2038-01-18",
+      "clubExpires":"2012-12-31"
+   }]
+}

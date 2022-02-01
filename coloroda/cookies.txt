@@ -1,0 +1,4 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+www.coloradocycling.org	TRUE	/	FALSE	1999999999	SSESS0f78da31351279ed83542cb4989ef323	4eA5c8bvwSBopTZfWDc6U11q6jFq9KNIr7MbpHbePx8
+

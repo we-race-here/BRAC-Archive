@@ -1,0 +1,351 @@
+
+<style>
+.dataGrid,
+.dataGrid table
+{
+	width : 100%;
+}
+
+table.collapse.in
+{
+	display: inline-table !important;
+}
+
+table
+{
+	margin-top: 0;
+}
+
+.accordion > header
+{
+	margin-bottom : 40px;
+}
+
+.accordion > header h3
+{
+	width: 33%;
+	padding: 0;
+	margin: 0;
+	display: inline-table;
+	color: #ec1a23;
+	cursor : pointer;
+	font-size: 18px;
+}
+
+.accordion > header h3:nth-of-type(2){
+	text-align: center;
+}
+.accordion > header h3:nth-of-type(3){
+	text-align: right;
+}
+
+@media screen and (max-width: 728px){
+	.accordion > header h3
+	{
+		text-align: center !important;
+		width: 100% !important;
+		clear: both !important;
+		padding-bottom: 10px;
+	}
+
+	table.collapse.in
+	{
+		display: block !important;
+	}
+	 #id-responsive-table h2
+	 {
+		 padding-left: 2%;
+	 }
+}
+
+@media screen and (max-width: 450px){
+	 #id-responsive-table h2
+	 {
+		 padding-left: 4%;
+	 }
+}
+
+</style>
+
+<script>
+$('document').ready(function(){
+	$('.accordion header h3').on('click', function(){
+		var accordions = $( '.accordion table' );
+
+		for( var i=0, n=accordions.length; i<n; i++ ){
+
+			if( this.getAttribute('data-target') != accordions[i].id ){
+				$(accordions[i]).removeClass('in');
+				$(this).removeClass( 'active' );
+			}
+			else if( this.getAttribute('data-target') == accordions[i].id ){
+				$(this).addClass( 'active' );
+			}
+		}
+	});
+});
+</script>
+
+<div class="row" id="id-responsive-table">
+    <h2>Race Summary</h2>
+
+
+
+
+
+    <div class="accordion">
+
+	    <header>
+		    <h3 data-toggle="collapse" data-target="#t3">Summary by racegroup</h3>
+		    <h3 data-toggle="collapse" data-target="#t1">Summary by city</h3>
+		    <h3 data-toggle="collapse" data-target="#t2">Summary by team</h3>
+	    </header>
+
+		<table id="t3" class="collapse in IDcollapsable">
+			<thead>
+				<tr>
+					<th>Category</th>
+					<th>Starters</th>
+					<th>Finishers</th>
+				</tr>
+			</thead>
+			<tbody>
+					{% for i in event%}
+												    <tr class="row0">
+					<td>{{i.name}}</td>
+					<td>{{i.starters}}</td>
+					<td>{{i.starters}}</td>
+				    </tr>
+					{% endfor %}
+<!--													<tr class="row1">-->
+<!--					<td>TOTALS</td>-->
+<!--					<td>132</td>-->
+<!--					<td>129</td>-->
+<!--				    </tr>-->
+			</tbody>
+		</table>
+	</div>
+
+
+    <div class="accordion">
+
+    	<table id="t1" class="collapse IDcollapsable">
+		    <thead>
+			    <tr>
+					<th><a href="/results/cities?eventId=2785">Home City</a></th>
+					<th>Finishers</th>
+				</tr>
+
+			</thead>
+			<tbody>
+								<tr>
+				    <td><a href="/results/cities?eventId=2785&city=Unspecified">Unspecified</a></td><td>6</td>
+				</tr>
+								<tr>
+				    <td><a href="/results/cities?eventId=2785&city=Arvada">Arvada</a></td><td>2</td>
+				</tr>
+								<tr>
+				    <td><a href="/results/cities?eventId=2785&city=Aurora">Aurora</a></td><td>10</td>
+				</tr>
+								<tr>
+				    <td><a href="/results/cities?eventId=2785&city=Boulder">Boulder</a></td><td>7</td>
+				</tr>
+								<tr>
+				    <td><a href="/results/cities?eventId=2785&city=Bow Mar">Bow Mar</a></td><td>1</td>
+				</tr>
+								<tr>
+				    <td><a href="/results/cities?eventId=2785&city=Brighton">Brighton</a></td><td>1</td>
+				</tr>
+								<tr>
+				    <td><a href="/results/cities?eventId=2785&city=Buena Vista">Buena Vista</a></td><td>1</td>
+				</tr>
+								<tr>
+				    <td><a href="/results/cities?eventId=2785&city=Castle Pines">Castle Pines</a></td><td>2</td>
+				</tr>
+								<tr>
+				    <td><a href="/results/cities?eventId=2785&city=Castle Rock">Castle Rock</a></td><td>1</td>
+				</tr>
+								<tr>
+				    <td><a href="/results/cities?eventId=2785&city=Centennial">Centennial</a></td><td>3</td>
+				</tr>
+								<tr>
+				    <td><a href="/results/cities?eventId=2785&city=Co Springs">Co Springs</a></td><td>4</td>
+				</tr>
+								<tr>
+				    <td><a href="/results/cities?eventId=2785&city=Colorado Springs">Colorado Springs</a></td><td>3</td>
+				</tr>
+								<tr>
+				    <td><a href="/results/cities?eventId=2785&city=Denver">Denver</a></td><td>29</td>
+				</tr>
+								<tr>
+				    <td><a href="/results/cities?eventId=2785&city=Englewood">Englewood</a></td><td>2</td>
+				</tr>
+								<tr>
+				    <td><a href="/results/cities?eventId=2785&city=Erie">Erie</a></td><td>2</td>
+				</tr>
+								<tr>
+				    <td><a href="/results/cities?eventId=2785&city=Evergreen">Evergreen</a></td><td>3</td>
+				</tr>
+								<tr>
+				    <td><a href="/results/cities?eventId=2785&city=Fort Collins">Fort Collins</a></td><td>3</td>
+				</tr>
+								<tr>
+				    <td><a href="/results/cities?eventId=2785&city=Golden">Golden</a></td><td>3</td>
+				</tr>
+								<tr>
+				    <td><a href="/results/cities?eventId=2785&city=Greenwood Village">Greenwood Village</a></td><td>2</td>
+				</tr>
+								<tr>
+				    <td><a href="/results/cities?eventId=2785&city=Greenwood Vlg">Greenwood Vlg</a></td><td>1</td>
+				</tr>
+								<tr>
+				    <td><a href="/results/cities?eventId=2785&city=Highlands Ranch">Highlands Ranch</a></td><td>4</td>
+				</tr>
+								<tr>
+				    <td><a href="/results/cities?eventId=2785&city=Lafayette">Lafayette</a></td><td>1</td>
+				</tr>
+								<tr>
+				    <td><a href="/results/cities?eventId=2785&city=Lakewood">Lakewood</a></td><td>8</td>
+				</tr>
+								<tr>
+				    <td><a href="/results/cities?eventId=2785&city=Littleton">Littleton</a></td><td>13</td>
+				</tr>
+								<tr>
+				    <td><a href="/results/cities?eventId=2785&city=Lone Tree">Lone Tree</a></td><td>1</td>
+				</tr>
+								<tr>
+				    <td><a href="/results/cities?eventId=2785&city=Longmont">Longmont</a></td><td>2</td>
+				</tr>
+								<tr>
+				    <td><a href="/results/cities?eventId=2785&city=Louisville">Louisville</a></td><td>3</td>
+				</tr>
+								<tr>
+				    <td><a href="/results/cities?eventId=2785&city=Parker">Parker</a></td><td>5</td>
+				</tr>
+								<tr>
+				    <td><a href="/results/cities?eventId=2785&city=Pflugerville">Pflugerville</a></td><td>2</td>
+				</tr>
+								<tr>
+				    <td><a href="/results/cities?eventId=2785&city=Superior">Superior</a></td><td>2</td>
+				</tr>
+								<tr>
+				    <td><a href="/results/cities?eventId=2785&city=Westminster">Westminster</a></td><td>1</td>
+				</tr>
+								<tr>
+				    <td><a href="/results/cities?eventId=2785&city=Wheat Ridge">Wheat Ridge</a></td><td>1</td>
+				</tr>
+							</tbody>
+		</table>
+	</div>
+
+
+	<div class="accordion">
+		<table id="t2" class="collapse IDcollapsable">
+			<thead>
+				<tr>
+					<th><a href="/results/teams?eventId=2785">Team</a></th>
+					<th>Finishers</th>
+				</tr>
+			</thead>
+			<tbody>
+								<tr class="row0">
+					<td><a href="/results/teams?eventId=2785&team=Alp Cycles Racing">Alp Cycles Racing</a></td><td>2</td>
+				</tr>
+								<tr class="row1">
+					<td><a href="/results/teams?eventId=2785&team=Ardor Racing">Ardor Racing</a></td><td>1</td>
+				</tr>
+								<tr class="row0">
+					<td><a href="/results/teams?eventId=2785&team=Bouldercentre For Orthopedics And Spine">Bouldercentre For Orthopedics And Spine</a></td><td>1</td>
+				</tr>
+								<tr class="row1">
+					<td><a href="/results/teams?eventId=2785&team=Chalet/celebrity Home Loans">Chalet/celebrity Home Loans</a></td><td>1</td>
+				</tr>
+								<tr class="row0">
+					<td><a href="/results/teams?eventId=2785&team=Christiancycling Colorado">Christiancycling Colorado</a></td><td>3</td>
+				</tr>
+								<tr class="row1">
+					<td><a href="/results/teams?eventId=2785&team=Cobras">Cobras</a></td><td>3</td>
+				</tr>
+								<tr class="row0">
+					<td><a href="/results/teams?eventId=2785&team=Cos Racing">Cos Racing</a></td><td>4</td>
+				</tr>
+								<tr class="row1">
+					<td><a href="/results/teams?eventId=2785&team=Dna Cycling Masters">Dna Cycling Masters</a></td><td>1</td>
+				</tr>
+								<tr class="row0">
+					<td><a href="/results/teams?eventId=2785&team=Evergreen Bike Shop/altitude Cycling">Evergreen Bike Shop/altitude Cycling</a></td><td>2</td>
+				</tr>
+								<tr class="row1">
+					<td><a href="/results/teams?eventId=2785&team=Flow Formulas Racing">Flow Formulas Racing</a></td><td>1</td>
+				</tr>
+								<tr class="row0">
+					<td><a href="/results/teams?eventId=2785&team=Front Rangers Cycling Club - Denver">Front Rangers Cycling Club - Denver</a></td><td>5</td>
+				</tr>
+								<tr class="row1">
+					<td><a href="/results/teams?eventId=2785&team=Great Divide Brewing Company">Great Divide Brewing Company</a></td><td>3</td>
+				</tr>
+								<tr class="row0">
+					<td><a href="/results/teams?eventId=2785&team=Green Mountain Sports Velo">Green Mountain Sports Velo</a></td><td>1</td>
+				</tr>
+								<tr class="row1">
+					<td><a href="/results/teams?eventId=2785&team=Groove Subaru Excel Sports">Groove Subaru Excel Sports</a></td><td>3</td>
+				</tr>
+								<tr class="row0">
+					<td><a href="/results/teams?eventId=2785&team=Hammer Racing Team P/b Thorne">Hammer Racing Team P/b Thorne</a></td><td>6</td>
+				</tr>
+								<tr class="row1">
+					<td><a href="/results/teams?eventId=2785&team=Local Velo">Local Velo</a></td><td>1</td>
+				</tr>
+								<tr class="row0">
+					<td><a href="/results/teams?eventId=2785&team=Modern Market Racing P/b Gr Capital Partners">Modern Market Racing P/b Gr Capital Partners</a></td><td>1</td>
+				</tr>
+								<tr class="row1">
+					<td><a href="/results/teams?eventId=2785&team=Natural Grocers By Vitamin Cottage Inc">Natural Grocers By Vitamin Cottage Inc</a></td><td>1</td>
+				</tr>
+								<tr class="row0">
+					<td><a href="/results/teams?eventId=2785&team=Old School Industries">Old School Industries</a></td><td>4</td>
+				</tr>
+								<tr class="row1">
+					<td><a href="/results/teams?eventId=2785&team=Palmares Racing">Palmares Racing</a></td><td>4</td>
+				</tr>
+								<tr class="row0">
+					<td><a href="/results/teams?eventId=2785&team=Physio Racing">Physio Racing</a></td><td>12</td>
+				</tr>
+								<tr class="row1">
+					<td><a href="/results/teams?eventId=2785&team=Primal - Audi Denver">Primal - Audi Denver</a></td><td>4</td>
+				</tr>
+								<tr class="row0">
+					<td><a href="/results/teams?eventId=2785&team=Racer X Cycling  / Colobikelaw">Racer X Cycling  / Colobikelaw</a></td><td>9</td>
+				</tr>
+								<tr class="row1">
+					<td><a href="/results/teams?eventId=2785&team=Reynolds Roofing Racing">Reynolds Roofing Racing</a></td><td>1</td>
+				</tr>
+								<tr class="row0">
+					<td><a href="/results/teams?eventId=2785&team=Rmrc P/b Turin Bicycles">Rmrc P/b Turin Bicycles</a></td><td>1</td>
+				</tr>
+								<tr class="row1">
+					<td><a href="/results/teams?eventId=2785&team=Schwab Cycles Racing Team">Schwab Cycles Racing Team</a></td><td>3</td>
+				</tr>
+								<tr class="row0">
+					<td><a href="/results/teams?eventId=2785&team=Sonic Boom Racing">Sonic Boom Racing</a></td><td>1</td>
+				</tr>
+								<tr class="row1">
+					<td><a href="/results/teams?eventId=2785&team=Stages Cycling">Stages Cycling</a></td><td>6</td>
+				</tr>
+								<tr class="row0">
+					<td><a href="/results/teams?eventId=2785&team=Twin Peaks Racing">Twin Peaks Racing</a></td><td>1</td>
+				</tr>
+								<tr class="row1">
+					<td><a href="/results/teams?eventId=2785&team=Unattached">Unattached</a></td><td>41</td>
+				</tr>
+								<tr class="row0">
+					<td><a href="/results/teams?eventId=2785&team=Us Military Endurance Sports">Us Military Endurance Sports</a></td><td>1</td>
+				</tr>
+								<tr class="row1">
+					<td><a href="/results/teams?eventId=2785&team=Wholesome Masters Racing Team">Wholesome Masters Racing Team</a></td><td>1</td>
+				</tr>
+							</tbody>
+		</table>
+	</div>
+
+</div>

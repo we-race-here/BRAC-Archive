@@ -1,0 +1,350 @@
+
+
+    <div>
+    		<div>
+	<h3>{{event_obj.name}}</h3>
+		    	</div>
+	<div style="clear:both"></div>
+</div>
+
+
+<style>
+#id-responsive-table thead th
+{
+	background-color: #1e3163;
+}
+#id-responsive-table thead th *
+{
+	color: #fff;
+}
+
+</style>
+	<div class="row" id="id-responsive-table">
+		<table>
+			<thead>
+				<tr id="tableHeader">
+										<th class="aca-comp-place"><a href="#" rel="number ASC" class="aca-selector-sort">Place <span class="icon-sort"></span></a></th>
+					<th class="aca-comp-time"><a href="#" rel="time ASC" class="aca-selector-sort">Time <span class="icon-sort"></span></a></th>
+					<th class="aca-comp-category"><a href="#" rel="time ASC" class="aca-selector-sort">Category <span class="icon-sort"></span></a></th>
+					<th class="aca-comp-name first"><a href="#" rel="text ASC" class="aca-selector-sort">First Name <span class="icon-sort"></span></a></th>
+					<th class="aca-comp-name last"><a href="#" rel="text ASC" class="aca-selector-sort">Last Name <span class="icon-sort"></span></a></th>
+					<th class="aca-comp-team"><a href="#" rel="text ASC" class="aca-selector-sort">Team <span class="icon-sort"></span></a></th>
+					<th class="aca-comp-city"><a href="#" rel="text ASC" class="aca-selector-sort">City <span class="icon-sort"></span></a></th>
+					<th><a>Details</a></th>
+				</tr>
+			</thead>
+			<tbody>
+                {% for i in   resultset%}
+
+
+			    				    			<tr>
+
+								<td class="aca-comp-place aca-selector-racegroupid">
+									{{i.place}}								<input type="hidden" value="320"/>
+								</td>
+
+								<td class="aca-comp-time">
+									{{i.time}}									</td>
+
+								<td class="aca-comp-time">
+									{{i.time}}									</td>
+
+								<td class="aca-comp-name">
+									<a rel="Evan" href="/results/individual?usac=558894">
+										{{i.racerid.firstname}}										</a>
+								</td>
+
+								<td class="aca-comp-name">
+									<a rel="Turner" href="/results/individual?usac=558894">
+										{{i.racerid.lastname}}									</a>
+								</td>
+
+								<td class="aca-comp-team">
+									<a href="/results/teams?eventId=2785&team=Unattached">-	</a>
+								</td>
+
+								<td class="aca-comp-city">
+									<a href="/results/cities?eventId=2785&city=Lakewood">{{event_obj.name}}	</a>
+								</td>
+
+								<td class="aca-comp-details">
+									<a href="#" class="IDW_popup" data-riderData="19259">More Info <strong>*</strong></a>
+								</td>
+			    			</tr>
+            {%endfor%}
+																		</tbody>
+		</table>
+	</div>
+	<br/>
+<em style="color: #ec1a23;">* indicates riders who were not current BRAC members at time of event. Expired members results will not be counted for Cup Competitions. You can renew your membership <a href="http://brac/membership" style="color: #1e3163;">here&raquo;</a></em>
+
+<script type="text/javascript">
+var riderDataObject = [
+  {"lastName":"",
+  "firstName":"",
+  "place":"",
+  "bib":null,
+  "finished":"",
+  "time":"",
+  "team":"",
+  "city":"",
+  "category":"",
+  "notes":null,
+  "membershipstatus":"<strong style='color:red'>NO<\/strong>",
+  "riderid":""}];
+</script>
+
+	<div id="idw-riderdetails-table">
+		<div class="idw-inner">
+			<a class="idw-close">x close</a>
+			<h2>Racer Details</h2>
+			<div id="idw-details-container">
+				<div id="idw-lastName">
+					<b>Last Name : </b><span class="data"></span>
+				</div>
+				<div id="idw-firstName">
+					<b>First Name : </b><span class="data"></span>
+				</div>
+				<div id="idw-place">
+					<b>Place : </b><span class="data"></span>
+				</div>
+				<div id="idw-bib">
+					<b>Bib No. </b><span class="data"></span>
+				</div>
+				<div id="idw-finished">
+					<b>Finsished : </b><span class="data"></span>
+				</div>
+				<div id="idw-time">
+					<b>Time : </b><span class="data"></span>
+				</div>
+				<div id="idw-team">
+					<b>Team : </b><span class="data"></span>
+				</div>
+				<div id="idw-city">
+					<b>City : </b><span class="data"></span>
+				</div>
+				<div id="idw-category">
+					<b>Category : </b><span class="data"></span>
+				</div>
+				<div id="idw-membershipstatus">
+					<b>BRAC member at time of race : </b><span class="data"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+<script type="text/javascript">
+/*
+	*
+	*	@description		sort function for filter results
+	*
+	*
+	*
+*/
+
+(function() {
+	var toggleShow = function(show) {
+		var $this = jQuery(this),
+			verb = $this.hasClass("hide") ? "hide" : "show",
+			otherVerb  = $this.hasClass("show") ? "hide" : "show";
+		$this.removeClass(verb);
+		$this.addClass(otherVerb);
+		$this.html("[click to " + otherVerb +"]")
+		var op = $this.parents(".communique").find(".output");
+		op[verb]();
+		return false;
+	};
+	jQuery(".communique a.toggle").click(function() {
+		return toggleShow.call(this);
+	});
+})();
+
+
+
+(function(){
+	var select = jQuery('#rgid');
+	if (select.length==0){
+		return;
+	}
+	select = select[0];
+	select.onchange=function() {
+		var h2 = jQuery('#h2-rgname');
+		h2.html(select.value == "" ? "" : select.options[select.selectedIndex].text);
+		var cnt=0;
+		var inps = jQuery('td.aca-selector-racegroupid input[type="hidden"]');
+		inps.each(function(k,v){
+			var tr = jQuery(v).parents('tr');
+			var showThis = select.value=="" || v.value == select.value;
+			tr.css('display',(showThis ? '':'none'));
+			if (showThis) {
+				tr[0].className = cnt%2==0 ? 'row0':'row1';
+				cnt++;
+			}
+    	});
+	}
+})();
+
+
+/*
+	*
+	*	@description		sort function for table headers
+	*
+	*
+	*
+*/
+
+var aca = window.aca || {};
+aca.sorting = aca.sorting || {};
+
+Array.prototype.has = function(v){
+	for (i=0;i<this.length;i++){
+    	if (this[i]==v) return i;
+	}
+	return false;
+}
+
+aca.sorting.getKey = function(c,sort) {
+	return c.innerHTML.toLowerCase();
+}
+
+aca.sorting.sortResults  = function(e,s){
+	// console.log('@aca.sorting.sortResults()');
+	// console.log(e);
+	// console.log(s);
+	var sort 		= this.rel.split(' ');
+	var s 			= sort[0];
+	var d 			= sort[1];
+	var th 			= jQuery(this).parents('th')[0];
+	var table 		= jQuery(this).parents('table')[0];
+	var col 		= th.cellIndex;
+	var rows 		= table.rows;
+
+	var sortedRows 	= {};
+	var keys 		= Array();
+	var j=1;
+	while (table.rows.length>1) {
+	    var r = rows[1];
+	    var c = r.cells[col];
+	    var k = aca.sorting.getKey(c,sort[0]);
+	    // console.log(k);
+	    if (keys.has(k)===false){
+			keys.push(k);
+		}
+	    sortedRows[k] = sortedRows[k] || [];
+	    sortedRows[k].push(r.cloneNode(true));
+	    table.deleteRow(1);
+	}
+	if (s=="text") {
+		// console.log( `s = ${s}` );
+		console.log( keys );
+		if (d=="ASC")
+			keys.sort();
+		else
+			keys.reverse();
+	}
+	else
+	    keys.sort(function(k1,k2){
+		if (d=="DESC") {
+		    var tmp = k2;
+		    k2 = k1;
+		    k1 = tmp;
+		}
+
+		if (s=='number') {
+		    return parseInt(k1)-parseInt(k2);
+		}
+		else if (s=='time') {
+		   return aca.sorting.timeToInt(k1)-aca.sorting.timeToInt(k2);
+		}
+	    });
+
+	var tbody = jQuery(table).find('tbody')[0];
+	var cnt = 0;
+	for (var j=0;j<keys.length;j++) {
+		var rs = sortedRows[keys[j]];
+		for (var k=0;k<rs.length;k++) {
+			var r = rs[k];
+			var nr = table.insertRow(table.rows.length);
+			nr.className = cnt%2==0 ? 'row0':'row1';
+			for (var i=0;i<r.cells.length;i++) {
+		    	var c = nr.insertCell(i);
+				c.innerHTML = r.cells[i].innerHTML;
+			}
+			cnt++;
+		}
+	}
+
+	this.rel = s+" "+(d=="ASC" ? "DESC":"ASC");
+	return false;
+}
+
+aca.sorting.timeToInt = function(t) {
+	var t = t.split(':');
+	var pl = 1;
+	var k = 0;
+	for (var j=t.length-1;j>=0;j--) {
+	    k+=pl*parseInt(t[j]);
+	    pl *=60;
+	}
+	return k;
+}
+</script>
+
+
+<script>
+	/*
+		*
+		*	details popup
+		*
+		*
+	*/
+	// var $IDW = jQuery.noConflict();
+    $('#tableHeader').on('click','a.aca-selector-sort',aca.sorting.sortResults);
+
+    $(document).ready(function(){
+
+	    (function(){
+		    $('#idw-riderdetails-table').hide();
+		    var triggers = $('.IDW_popup'),
+		    cRiderData = null;
+		    // console.log( triggers.length );
+		    $(triggers).on('click',function( event ){
+			    event.preventDefault();
+			    var data = $(this).data().riderdata ? $(this).data().riderdata : null;
+			    // console.log( 'dis data : ' + data );
+			    var idwTable = $('#idw-riderdetails-table');
+
+			    if( typeof riderDataObject === 'object' ){
+				    for( var inst in riderDataObject ){
+					    // console.log(riderDataObject[inst].riderid);
+					    // console.log(data);
+					    if( parseInt(riderDataObject[inst].riderid) === parseInt(data) ){
+						    // console.log( riderDataObject[inst].lastName );
+						    cRiderData = riderDataObject[inst];
+						    break;
+					    }
+				    }
+			    }
+				// console.log( typeof cRiderData );
+			    // console.log( cRiderData.lastName );
+
+			    // $('#idw-riderdetails-table #idw-details-container #idw-lastName span.data').html(cRiderData.lastName);
+
+			    for( var key in cRiderData ){
+				    // console.log( key );
+				    var identifier = '#idw-riderdetails-table #idw-details-container #idw-'+key+' span.data';
+				    $(identifier).html(cRiderData[key]);
+			    }
+
+			    $(idwTable).show(200);
+		    });
+
+		    $('#idw-riderdetails-table .idw-close').on('click', function(){
+			   $('#idw-riderdetails-table').hide(200);
+		    });
+
+	    })();
+    });
+
+</script>

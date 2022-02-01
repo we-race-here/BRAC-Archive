@@ -1,0 +1,63 @@
+HTTrack3.49-2+htsswf+htsjava launched on Mon, 31 Jan 2022 19:29:36 at https://www.coloradocycling.org/ +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" https://www.coloradocycling.org/ -O1 "C:\My Web Sites\coloroda" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+19:36:06	Error: 	"Forbidden" (403) at link https://scontent.cdninstagram.com/v/t51.2885-15/e15/s320x320/79978942_311332206926469_3261939033686096458_n.jpg?_nc_ht=scontent.cdninstagram.com&_nc_ohc=yMnyEauR2MYAX8ZJxmp&oh=540de13c3e135d2ea3443cdeb204355f&oe=5F2102C6 (from https://www.coloradocycling.org/)
+19:36:06	Error: 	"Forbidden" (403) at link https://scontent.cdninstagram.com/v/t51.2885-15/e15/s320x320/90089633_231107258076513_6472509475794875678_n.jpg?_nc_ht=scontent.cdninstagram.com&_nc_ohc=_vPBojqA9OoAX-juaPC&oh=50f70733337aeca8855cde70adf10057&oe=5E9C9287 (from https://www.coloradocycling.org/)
+19:36:06	Error: 	"Forbidden" (403) at link https://scontent.cdninstagram.com/v/t51.2885-15/e15/s320x320/89485501_2558993711033047_3109453643667861834_n.jpg?_nc_ht=scontent.cdninstagram.com&_nc_ohc=4-BmKNzHtVoAX89ci92&oh=0bf31887330506f5e26541953f9bdf5b&oe=5EA276DF (from https://www.coloradocycling.org/)
+19:36:06	Error: 	"Forbidden" (403) at link https://scontent.cdninstagram.com/v/t51.2885-15/e35/89609627_2260614404244232_9000716618371053778_n.jpg?_nc_ht=scontent.cdninstagram.com&_nc_ohc=2CIx1XQn6hMAX-nz6db&oh=2ab990f63256ebf35060e1e116722878&oe=5E937527 (from https://www.coloradocycling.org/)
+19:36:06	Error: 	"Forbidden" (403) at link https://scontent.cdninstagram.com/v/t51.2885-15/e35/89817344_113652173584774_8164055127948056134_n.jpg?_nc_ht=scontent.cdninstagram.com&_nc_ohc=mV0CAv3jJzkAX8cVbsx&oh=bb46ac57b61478030508217e69fd5bf9&oe=5E941F99 (from https://www.coloradocycling.org/)
+19:36:06	Error: 	"Forbidden" (403) at link https://scontent.cdninstagram.com/v/t51.2885-15/e35/89820883_2790617771045171_3096492324643503807_n.jpg?_nc_ht=scontent.cdninstagram.com&_nc_ohc=2d2-IvTHTj4AX8yxyyU&oh=1adcb93448f8177f659177a0462d0ad5&oe=5E9C211A (from https://www.coloradocycling.org/)
+19:36:06	Error: 	"Forbidden" (403) at link https://scontent.cdninstagram.com/v/t51.2885-15/e15/s320x320/87737844_2598831897067177_5618056800789653724_n.jpg?_nc_ht=scontent.cdninstagram.com&_nc_ohc=Ns6a_LLhqacAX-UwhCL&oh=4ac6ec5c7add2c33402e387f17aea9cb&oe=5E8F532D (from https://www.coloradocycling.org/)
+19:36:06	Error: 	"Forbidden" (403) at link https://scontent.cdninstagram.com/v/t51.2885-15/e15/s320x320/89293209_194778681853754_7497205401362462283_n.jpg?_nc_ht=scontent.cdninstagram.com&_nc_ohc=ArChhChddpgAX8zW6_o&oh=fafcd9ff0f45df98e5576a7991afaab7&oe=5E918DEC (from https://www.coloradocycling.org/)
+19:36:06	Error: 	"Forbidden" (403) at link https://scontent.cdninstagram.com/v/t51.2885-15/e15/s320x320/85225665_610016699837015_5952236986838760721_n.jpg?_nc_ht=scontent.cdninstagram.com&_nc_ohc=Cz-aOdUmwvUAX8GDHFc&oh=7dfb20d96c16e7f5fbe61ca7edc11513&oe=5E855520 (from https://www.coloradocycling.org/)
+19:36:06	Error: 	"Forbidden" (403) at link https://scontent.cdninstagram.com/v/t51.2885-15/e15/s320x320/83951688_412311699589252_9207612340787415139_n.jpg?_nc_ht=scontent.cdninstagram.com&_nc_ohc=vxMVBJ5RpeAAX8L48js&oh=a797577451dac4ad4ebd40afb6ba3427&oe=5ED10B62 (from https://www.coloradocycling.org/)
+19:36:06	Warning: 	File not parsed, looks like binary: https://www.coloradocycling.org/sites/all/themes/fiora/fonts/glyphicons-halflings-regular.ttf
+19:36:06	Warning: 	File not parsed, looks like binary: https://www.coloradocycling.org/sites/all/themes/fiora/fonts/jollyicons.ttf?55747652
+19:36:06	Warning: 	File not parsed, looks like binary: https://www.coloradocycling.org/sites/all/themes/fiora/fonts/et-line.ttf
+19:36:06	Error: 	"Not Found" (404) at link https://www.coloradocycling.org/sites/all/themes/fiora/css/owl.video.play.png (from https://www.coloradocycling.org/sites/all/themes/fiora/css/owl-carousel.css?qvu333)
+19:36:06	Warning: 	File not parsed, looks like binary: https://www.coloradocycling.org/sites/all/themes/fiora/rs-plugin/font/revicons.ttf?5510888
+19:36:06	Error: 	"Not Found" (404) at link https://www.coloradocycling.org/sites/all/themes/brac/css/images/sexy-bg.png (from https://www.coloradocycling.org/sites/all/themes/brac/css/style.css?qvu333)
+19:36:06	Error: 	"Not Found" (404) at link https://www.coloradocycling.org/sites/all/themes/brac/css/demos/parallax_01.jpg (from https://www.coloradocycling.org/sites/all/themes/brac/css/style.css?qvu333)
+19:36:06	Error: 	"Not Found" (404) at link https://www.coloradocycling.org/sites/all/themes/brac/css/demos/slider_02.jpg (from https://www.coloradocycling.org/sites/all/themes/brac/css/style.css?qvu333)
+19:36:06	Warning: 	File not parsed, looks like binary: https://www.coloradocycling.org/sites/all/themes/brac/font-awesome/fonts/fontawesome-webfont.woff2?v=4.5.0
+19:36:06	Warning: 	File not parsed, looks like binary: https://www.coloradocycling.org/sites/all/themes/brac/font-awesome/fonts/fontawesome-webfont.ttf?v=4.5.0
+19:36:58	Error: 	"Not Found" (404) at link https://www.coloradocycling.org/sites/default/files/Site_Files/Race_Flyers/1969/ (from https://www.coloradocycling.org/results/road)
+19:36:58	Error: 	"Not Found" (404) at link https://www.coloradocycling.org/sites/default/files/Site_Files/Race_Flyers/ (from https://www.coloradocycling.org/results/road)
+19:36:58	Error: 	"Not Found" (404) at link https://www.coloradocycling.org/node/</p>
+</body></html> (from https://www.coloradocycling.org/node/1073)
+19:36:58	Error: 	"Not Found" (404) at link https://www.coloradocycling.org/info/promoters (from https://www.coloradocycling.org/info)
+19:36:58	Error: 	"Not Found" (404) at link https://www.coloradocycling.org/%20info/officials (from https://www.coloradocycling.org/info)
+19:36:58	Error: 	"Not Found" (404) at link https://www.coloradocycling.org/sites/default/files/great_divide_0.png (from https://www.coloradocycling.org/node/1052)
+19:36:58	Error: 	"Not Found" (404) at link https://www.coloradocycling.org/node/s</p>
+</body></html> (from https://www.coloradocycling.org/node/1053)
+19:37:01	Error: 	"Not Found" (404) at link https://www.coloradocycling.org/sites/default/files/may_2017_balance_sheet.pdf (from https://www.coloradocycling.org/board/finance-reports)
+19:37:01	Error: 	"Not Found" (404) at link https://www.coloradocycling.org/sites/default/files/may_2017_pl_to_budget.pdf (from https://www.coloradocycling.org/board/finance-reports)
+19:37:01	Error: 	"Not Found" (404) at link https://www.coloradocycling.org/sites/default/files/april_2017_balance_sheet.pdf (from https://www.coloradocycling.org/board/finance-reports)
+19:37:01	Error: 	"Not Found" (404) at link https://www.coloradocycling.org/sites/default/files/april_2017_pl_to_budget_new.pdf (from https://www.coloradocycling.org/board/finance-reports)
+19:37:01	Error: 	"Not Found" (404) at link https://www.coloradocycling.org/sites/default/files/march_2017_balance_sheet.pdf (from https://www.coloradocycling.org/board/finance-reports)
+19:37:01	Error: 	"Not Found" (404) at link https://www.coloradocycling.org/sites/default/files/march_2017_pl_to_budget.pdf (from https://www.coloradocycling.org/board/finance-reports)
+19:40:28	Error: 	"Not Found" (404) at link https://www.coloradocycling.org/sites/default/files/cxblog.jpg (from https://www.coloradocycling.org/presidential-blog)
+19:40:28	Error: 	"Not Found" (404) at link https://www.coloradocycling.org/sites/default/files/img_1697.jpg (from https://www.coloradocycling.org/presidential-blog)
+19:40:28	Error: 	"Not Found" (404) at link https://www.coloradocycling.org/sites/default/files/womens_cx_camp_3.jpg (from https://www.coloradocycling.org/presidential-blog)
+19:40:28	Error: 	"Not Found" (404) at link https://www.coloradocycling.org/sites/default/files/juniorcxcamp_0.jpg (from https://www.coloradocycling.org/presidential-blog)
+19:42:48	Error: 	"Not Found" (404) at link https://www.coloradocycling.org/bar/s</p>
+</body></html> (from https://www.coloradocycling.org/bar/menu)
+19:42:48	Error: 	"Bad Request" (400) at link https://www.coloradocycling.org/calendar/s</p>
+</body></html>?type=s<&month=1&year=2022&action=-1 (from https://www.coloradocycling.org/calendar/s</p>
+</body></html>)
+19:42:48	Error: 	"Bad Request" (400) at link https://www.coloradocycling.org/calendar/s</p>
+</body></html>?type=s<&month=1&year=2022&action=+1 (from https://www.coloradocycling.org/calendar/s</p>
+</body></html>)
+19:42:48	Error: 	"Not Found" (404) at link https://www.coloradocycling.org/bcr/s</p>
+</body></html> (from https://www.coloradocycling.org/bcr/menu)
+20:01:59	Error: 	Exit requested by shell or user
+20:02:00	Warning: 	File not added due to mirror cancel: https://www.coloradocycling.org/results/cross?year=2021&eventId=2843&resultssetId=sum
+20:02:06	Error: 	"Not Found" (404) at link https://www.coloradocycling.org/articles/2011-aca-women?s-mentoring-sw4-racers (from https://www.coloradocycling.org/news?page=58)
+
+HTTrack Website Copier/3.49-2 mirror complete in 33 minutes 7 seconds : 3408 links scanned, 3371 files written (224325107 bytes overall) [161027887 bytes received at 81040 bytes/sec], 79341862 bytes transferred using HTTP compression in 2454 files, ratio 17%, 22.6 requests per connection
+(37 errors, 7 warnings, 0 messages)

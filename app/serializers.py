@@ -25,6 +25,12 @@ class AcaUserSerailizers(QueryFieldsMixin,serializers.ModelSerializer):
 class AcaEventSerailizers(QueryFieldsMixin,serializers.ModelSerializer):
     eventdatetime_format =serializers.DateTimeField(source='eventdatetime', format="%d %B, %Y", required=False, read_only=True)
     promoter = AcaUserSerailizers()
+    text = serializers.SerializerMethodField()
+    value = serializers.SerializerMethodField()
+    def get_value(self, value):
+        return value.id
+    def get_text(self, value):
+        return value.eventdatetime.strftime('%d %B, %Y') +'-' +   value.name
     class Meta:
         model  = models.AcaEvent
         fields = '__all__'
