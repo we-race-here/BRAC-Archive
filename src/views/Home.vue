@@ -10,37 +10,48 @@
     <v-row>
       <v-col cols="12" sm="1"></v-col>
       <v-col cols="12" sm="10">
-        <v-card elevation="0" >
+        <v-card elevation="0">
           <v-card-title>
             <h3 style="border-left: 5px solid #1890ff" class="pl-3">
-                Upcoming Races & Events <v-btn small title text @click="$router.push('/Event/all')">View Full >></v-btn>
-              </h3>
-              </v-card-title>
+              Upcoming Races & Events
+              <v-btn small title text @click="$router.push('/Event/all')"
+                >View Full >></v-btn
+              >
+            </h3>
+          </v-card-title>
           <v-card-text class="ma-3 pa-0">
             <!-- <calendar /> -->
             <!-- <div>{{UpComingEvents}}</div> -->
             <v-row>
-              <v-col cols="12" sm="3" class="ma-0 pa-0" v-for="i in UpComingEvents" v-bind:key="i.id">
-                <v-card  class="ma-1" max-width="300" elevation="0">
+              <v-col
+                cols="12"
+                sm="3"
+                class="ma-0 pa-0"
+                v-for="i in UpComingEvents"
+                v-bind:key="i.id"
+              >
+                <v-card class="ma-1" max-width="300" elevation="0">
+                  <v-card-text>
+                    <h3>{{ i.name }}</h3>
+                    <v-row align="center" class="mx-0 mt-2">
+                      <div v-if="i.promoter" class="grey--text ms-4">
+                        Promoter: {{ i.promoter.firstname }}
+                        {{ i.promoter.lastname }}
+                      </div>
+                    </v-row>
 
-              <v-card-text>
-                <h3>{{i.name}}</h3>
-                <v-row align="center" class="mx-0 mt-2">
-                  
+                    <div class="mt-2 text-subtitle-3">
+                      {{ i.eventdatetime_format }}
+                    </div>
 
-                  <div v-if="i.promoter" class="grey--text ms-4">Promoter: {{i.promoter.firstname}} {{i.promoter.lastname}}</div>
-                </v-row>
-
-                <div class="mt-2 text-subtitle-3">{{i.eventdatetime_format}}</div>
-
-                <!-- <div>
+                    <!-- <div>
                   {{i.description}}
                 </div> -->
-              </v-card-text>
+                  </v-card-text>
 
-              <!-- <v-divider class="mx-4"></v-divider> -->
+                  <!-- <v-divider class="mx-4"></v-divider> -->
 
-              <!-- <v-card-title>Tonight's availability</v-card-title>
+                  <!-- <v-card-title>Tonight's availability</v-card-title>
 
               <v-card-text>
                 <v-chip-group
@@ -57,10 +68,10 @@
                 </v-chip-group>
               </v-card-text> -->
 
-              <v-card-actions>
-                <a v-if="i.url" :href="i.url">Promoter Url >></a>
-               </v-card-actions>
-            </v-card>
+                  <v-card-actions>
+                    <a v-if="i.url" :href="i.url">Promoter Url >></a>
+                  </v-card-actions>
+                </v-card>
               </v-col>
             </v-row>
           </v-card-text>
@@ -73,14 +84,42 @@
         <v-card outlined color="rgb( 230, 230, 230 )">
           <v-card-title> </v-card-title>
           <v-card-text>
-            <p class="text-h4 text-center">THANK & SUPPORT OUR LOYAL SPONSORS</p>
-            <center>
-              <v-img
-                width="200"
-                src="@/assets/olson_law_firm_logo.jpg"
-              >
-              </v-img>
-            </center>
+            <p class="text-h4 text-center">
+              THANK & SUPPORT OUR LOYAL SPONSORS
+            </p>
+            <center><b>BRANDS</b></center>
+            <v-container>
+              <v-row>
+                <v-col cols="12" sm="2">
+                  <v-img
+                    max-width="100"
+                    src="@/assets/great_divide_main_logo-rectangle__0.jpg"
+                  >
+                  </v-img>
+                </v-col>
+                <v-col cols="12" sm="2">
+                  <v-img max-width="150" src="@/assets/tec_logo_vertical.png">
+                  </v-img>
+                </v-col>
+                <v-col cols="12" sm="2">
+                  <v-img max-width="100" src="@/assets/buddy_logo.png"> </v-img>
+                </v-col>
+                <v-col cols="12" sm="2">
+                  <v-img max-width="200" src="@/assets/pactimo_0.png"> </v-img>
+                </v-col>
+                <v-col cols="12" sm="2">
+                  <v-img max-width="2 00" src="@/assets/co_bike_law_0_0_0.png">
+                  </v-img>
+                </v-col>
+                <v-col cols="12" sm="2">
+                  <v-img
+                    max-width="2 00"
+                    src="@/assets/centennial_hospital.png"
+                  >
+                  </v-img>
+                </v-col>
+              </v-row>
+            </v-container>
 
             <!-- <v-img
               width="100"

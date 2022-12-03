@@ -1,7 +1,7 @@
 import axios from "axios";
-const Domain = process.env.VUE_APP_Backed_API;
+// const Domain = process.env.VUE_APP_Backed_API;
 var CycAxios = axios.create({
-  baseURL: Domain,
+  // baseURL: Domain,
   withCredentials: true,
 });
 
