@@ -79,57 +79,7 @@
       </v-col>
       <v-col cols="12" sm="1"></v-col>
     </v-row>
-    <v-row>
-      <v-col cols="12" sm="12">
-        <v-card outlined color="rgb( 230, 230, 230 )">
-          <v-card-title> </v-card-title>
-          <v-card-text>
-            <p class="text-h4 text-center">
-              THANK & SUPPORT OUR LOYAL SPONSORS
-            </p>
-            <center><b>BRANDS</b></center>
-            <v-container>
-              <v-row>
-                <v-col cols="12" sm="2">
-                  <v-img
-                    max-width="100"
-                    src="@/assets/great_divide_main_logo-rectangle__0.jpg"
-                  >
-                  </v-img>
-                </v-col>
-                <v-col cols="12" sm="2">
-                  <v-img max-width="150" src="@/assets/tec_logo_vertical.png">
-                  </v-img>
-                </v-col>
-                <v-col cols="12" sm="2">
-                  <v-img max-width="100" src="@/assets/buddy_logo.png"> </v-img>
-                </v-col>
-                <v-col cols="12" sm="2">
-                  <v-img max-width="200" src="@/assets/pactimo_0.png"> </v-img>
-                </v-col>
-                <v-col cols="12" sm="2">
-                  <v-img max-width="2 00" src="@/assets/co_bike_law_0_0_0.png">
-                  </v-img>
-                </v-col>
-                <v-col cols="12" sm="2">
-                  <v-img
-                    max-width="2 00"
-                    src="@/assets/centennial_hospital.png"
-                  >
-                  </v-img>
-                </v-col>
-              </v-row>
-            </v-container>
 
-            <!-- <v-img
-              width="100"
-              src="https://media.istockphoto.com/vectors/rubber-stamp-with-sponsor-concept-vector-id995710774"
-              gradient="to top right, rgba(100,115,201,.33), rgba(25,32,72,.7)"
-            ></v-img> -->
-          </v-card-text>
-        </v-card>
-      </v-col>
-    </v-row>
   </div>
 </template>
 

@@ -60,15 +60,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/cycling/static/img/tec_logo_vertical.c920d73e.png"
   },
   {
-    "revision": "2cc7f6680e71adb64417",
-    "url": "/cycling/static/js/app.902e7f66.js"
+    "revision": "fc9fcfaabfdc9b9772d2",
+    "url": "/cycling/static/js/app.2796a4ba.js"
   },
   {
     "revision": "42dd1bc4c44a403a9f8a",
     "url": "/cycling/static/js/chunk-vendors.c2823c21.js"
   },
   {
-    "revision": "dda5aca9a74368e5ecd6039b0835d7e6",
+    "revision": "0e7c0b4447af425fdf1b9d844de7a026",
     "url": "/index.html"
   },
   {

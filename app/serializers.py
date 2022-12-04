@@ -1,5 +1,5 @@
 from datetime import datetime
-
+import  datetime as datatimeas
 from . import  models
 from rest_framework import serializers
 from drf_queryfields import QueryFieldsMixin
@@ -85,6 +85,14 @@ class AcaResultEventSerailizers(QueryFieldsMixin,serializers.ModelSerializer):
     racerid = AcaUserSerailizers()
     eventid = AcaEventSerailizers()
     eventracegroupid = AcaRacegroupSerailizers()
+    time = serializers.SerializerMethodField(method_name='calculate_time')
+
+    def calculate_time(self, value):
+        try:
+            return  str(datatimeas.timedelta(days=float(value.time)))
+        except Exception as e:
+            print(str(e))
+            return  value.time
     class Meta:
         model  = models.AcaResult
         fields = '__all__'

@@ -57,10 +57,17 @@
                   hide-details
                 ></v-text-field> -->
                   <b>RACE SUMMARY:</b>
-                  <v-btn-toggle v-model="summaryBy" color="primary" dense class="ml-2" borderless>
-                    <v-btn >
-                      <span class="hidden-sm-and-down">Summary By RaceGroup</span>
-
+                  <v-btn-toggle
+                    v-model="summaryBy"
+                    color="primary"
+                    dense
+                    class="ml-2"
+                    borderless
+                  >
+                    <v-btn>
+                      <span class="hidden-sm-and-down"
+                        >Summary By RaceGroup</span
+                      >
                     </v-btn>
 
                     <!-- <v-btn >
@@ -72,7 +79,6 @@
                       <span class="hidden-sm-and-down">Summary By Team</span>
 
                     </v-btn> -->
-
                   </v-btn-toggle>
                   <v-data-table
                     :loading="EventResultLoader"
@@ -93,6 +99,11 @@
                         >${item.view_result}</a
                       >
                     </template>
+                    <template v-slot:item.name="{ item }">
+                      <a @click="selectedCategory(item)"
+                        >{{item.name}}</a
+                      >
+                    </template>
                   </v-data-table>
                 </v-col>
               </v-row>
@@ -110,6 +121,11 @@ export default {
   mixins: [helpermixin],
   mounted() {
     this.getYear();
+  },
+  methods: {
+    selectedCategory(item){
+      this.GroupSelcted = item.id
+    }
   },
 };
 </script>
