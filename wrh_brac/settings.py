@@ -159,3 +159,5 @@ if DEBUG:
     ]
     CORS_ORIGIN_ALLOW_ALL = True
     CORS_ALLOW_CREDENTIALS = True
+
+CSRF_TRUSTED_ORIGINS = ['https://archive.coloradocycling.org']
