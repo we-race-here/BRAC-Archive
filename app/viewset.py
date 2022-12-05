@@ -52,6 +52,12 @@ class AcaPointscompetitionresultViewSet(viewsets.ModelViewSet):
     filterset_fields = [field.name for field in models.AcaPointscompetitionresult._meta.fields]
     pagination_class = None
 
+class HomeBannerImageiewSet(viewsets.ModelViewSet):
+    serializer_class = serializers.HomeBannerImageSerailizers
+    queryset = models.HomeBannerImage.objects.all()
+    filter_backends = [DjangoFilterBackend, filters.OrderingFilter, filters.SearchFilter]
+    pagination_class = None
+
 class AcaEventViewSet(viewsets.ModelViewSet):
     serializer_class = serializers.AcaEventSerailizers
     queryset = models.AcaEvent.objects.all()

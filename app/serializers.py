@@ -35,6 +35,12 @@ class AcaEventSerailizers(QueryFieldsMixin,serializers.ModelSerializer):
         model  = models.AcaEvent
         fields = '__all__'
 
+class HomeBannerImageSerailizers(QueryFieldsMixin,serializers.ModelSerializer):
+
+    class Meta:
+        model  = models.HomeBannerImage
+        fields = '__all__'
+
 class AcaRacegroupAcaEventSerailizers(QueryFieldsMixin,serializers.ModelSerializer):
 
     class Meta:

@@ -738,3 +738,8 @@ class AcaUsersingleday(models.Model):
 
     class Meta:
         db_table = 'aca_usersingleday'
+
+
+
+class HomeBannerImage(models.Model):
+    image = models.FileField()

@@ -6,19 +6,26 @@
           <v-card-title class="text-h5 grey lighten-2"> Races </v-card-title>
 
           <v-card-text v-if="dialog">
-            <div class="text-center mt-2" v-if="eventLoader">
-              <v-progress-circular
-                indeterminate
-                size="25"
-                color="primary"
-              ></v-progress-circular>
-            </div>
             <div v-once v-if="selectedUser">
               {{ getUserRaces(selectedUser) }}
             </div>
             <div>
               <!-- <b>->> ${UserEvents}</b> -->
-              <v-row class="ma-0 pa-0">
+              <v-data-table
+                :loading="eventLoader"
+                :headers="[
+                  { text: 'Name', value: 'eventid.name' },
+                  { text: 'City', value: 'eventid.eventcity' },
+                  { text: 'Finish Position', value: 'place' },
+                  { text: 'Date', value: 'eventid.eventdatetime_format' },
+                ]"
+                :items="UserEvents"
+              >
+              <template v-slot:item.eventid.name="{item}">
+                <a @click="$router.push({name: 'road', query: {year: new Date(item.eventid.eventdatetime).getFullYear(), event: item.eventid.id} })">{{item.eventid.name}}</a>
+              </template>
+              </v-data-table>
+              <!-- <v-row class="ma-0 pa-0">
                 <v-col
                   class="mt-2 ma-0 pa-0"
                   v-for="i in UserEvents"
@@ -42,18 +49,10 @@
                       </v-list-item-content>
                     </v-list-item>
 
-                    <v-card-actions>
-                      <!-- <v-btn
-          outlined
-          rounded
-          text
-        >
-          Button
-        </v-btn> -->
-                    </v-card-actions>
+                    <v-card-actions> </v-card-actions>
                   </v-card>
                 </v-col>
-              </v-row>
+              </v-row> -->
             </div>
           </v-card-text>
 

@@ -120,7 +120,15 @@ import { helpermixin } from "../mixins/helper";
 export default {
   mixins: [helpermixin],
   mounted() {
-    this.getYear();
+    this.getYear()
+    console.log(this.$route.query)
+    if (this.$route.query.year){
+      this.SelectedYear = Number(this.$route.query.year)
+    }
+    if (this.$route.query.event){
+      this.EventSelected = Number(this.$route.query.event)
+    }
+  
   },
   methods: {
     selectedCategory(item){

@@ -19,8 +19,8 @@
               </v-row>
             </v-card>
           </v-col>
-          <v-col cols="12" sm="6" class="mt-5">
-            <v-menu
+          <v-col cols="12" sm="4" class="mt-5">
+            <!-- <v-menu
               open-on-hover
               offset-y
               rounded="lg"
@@ -55,7 +55,7 @@
                   <v-list-item-title>CROSS CLINIC</v-list-item-title>
                 </v-list-item>
               </v-list>
-            </v-menu>
+            </v-menu> -->
             <v-menu
               open-on-hover
               offset-y
@@ -172,12 +172,18 @@
 
             <!-- <v-btn class="ml-5" small color="primary">Login</v-btn> -->
           </v-col>
+          <v-col cols="12" sm="2" class="mt-4">
+            <v-icon color="red" class="ml-5">mdi-facebook</v-icon>
+            <v-icon color="red" class="ml-5">mdi-email</v-icon>
+            <v-icon color="red" class="ml-5">mdi-twitter</v-icon>
+          </v-col>
         </v-row>
     </v-banner>
 
     <v-main>
       <router-view />
-      <v-row>
+      <!-- Sponsors -->
+      <!-- <v-row>
         <v-col cols="12" sm="12">
           <v-card outlined color="rgb( 230, 230, 230 )">
             <v-card-title> </v-card-title>
@@ -223,16 +229,10 @@
                   </v-col>
                 </v-row>
               </v-container>
-
-              <!-- <v-img
-              width="100"
-              src="https://media.istockphoto.com/vectors/rubber-stamp-with-sponsor-concept-vector-id995710774"
-              gradient="to top right, rgba(100,115,201,.33), rgba(25,32,72,.7)"
-            ></v-img> -->
             </v-card-text>
           </v-card>
         </v-col>
-      </v-row>
+      </v-row> -->
     </v-main>
     <v-footer padless>
       <v-col class="text-center" cols="12">
