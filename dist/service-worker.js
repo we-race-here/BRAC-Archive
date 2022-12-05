@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.84084706794cf293bbb4bcb18bd4a31d.js"
+  "/precache-manifest.e2bdd2069e18be7fb8e63d2758751833.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "cycling"});

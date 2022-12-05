@@ -36,7 +36,10 @@ class AcaEventSerailizers(QueryFieldsMixin,serializers.ModelSerializer):
         fields = '__all__'
 
 class HomeBannerImageSerailizers(QueryFieldsMixin,serializers.ModelSerializer):
+    filelocation = serializers.SerializerMethodField()
 
+    def get_filelocation(self, value):
+        return f"/media/{value.image}"
     class Meta:
         model  = models.HomeBannerImage
         fields = '__all__'

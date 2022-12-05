@@ -12,15 +12,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/cycling/static/img/brac_newlogo2.989d8246.png"
   },
   {
-    "revision": "b93957af6bd3d0ed82b3",
-    "url": "/cycling/static/js/app.028eb872.js"
+    "revision": "d1cf23da1bc14504e4e5",
+    "url": "/cycling/static/js/app.e2fc3bc8.js"
   },
   {
     "revision": "e63667b0e66162363bb3",
     "url": "/cycling/static/js/chunk-vendors.1901b24c.js"
   },
   {
-    "revision": "a8aa6ceb03ceae5b18b344128c4947bc",
+    "revision": "bd53932b99fa2bfbea97e478ebba6511",
     "url": "/index.html"
   },
   {

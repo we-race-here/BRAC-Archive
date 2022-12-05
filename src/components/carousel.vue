@@ -3,7 +3,7 @@
     <v-carousel-item v-bind:key="image.id" v-for="image in Images">
       <v-sheet  height="100%" tile>
         <v-row class="fill-height" align="center" justify="center">
-          <v-img :src="image.image"></v-img>
+          <v-img :src="image.filelocation"></v-img>
         </v-row>
       </v-sheet>
     </v-carousel-item>

@@ -53,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    'rollbar.contrib.django.middleware.RollbarNotifierMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -161,3 +162,11 @@ if DEBUG:
     CORS_ALLOW_CREDENTIALS = True
 
 CSRF_TRUSTED_ORIGINS = ['https://archive.coloradocycling.org']
+
+ROLLBAR = {
+     'access_token': env('RollBar'),
+     'environment': 'development' if DEBUG else 'production',
+     'root': BASE_DIR,
+ }
+import rollbar
+rollbar.init(**ROLLBAR)
