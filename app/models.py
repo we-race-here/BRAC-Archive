@@ -743,3 +743,7 @@ class AcaUsersingleday(models.Model):
 
 class HomeBannerImage(models.Model):
     image = models.FileField()
+
+
+class HomeInformation(models.Model):
+    text = models.TextField()

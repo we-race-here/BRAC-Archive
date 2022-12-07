@@ -58,6 +58,12 @@ class HomeBannerImageiewSet(viewsets.ModelViewSet):
     filter_backends = [DjangoFilterBackend, filters.OrderingFilter, filters.SearchFilter]
     pagination_class = None
 
+class HomeInformationViewSet(viewsets.ModelViewSet):
+    serializer_class = serializers.HomeInformationSerailizers
+    queryset = models.HomeInformation.objects.all()
+    filter_backends = [DjangoFilterBackend, filters.OrderingFilter, filters.SearchFilter]
+    pagination_class = None
+
 class AcaEventViewSet(viewsets.ModelViewSet):
     serializer_class = serializers.AcaEventSerailizers
     queryset = models.AcaEvent.objects.all()
