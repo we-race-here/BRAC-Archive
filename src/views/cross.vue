@@ -39,13 +39,13 @@
                               
                               {{ data.item.name }}</v-list-item-title
                             >
-                            <v-list-item-subtitle>
+                            <!-- <v-list-item-subtitle>
                               {{
                                 data.item.eventdatetime_format
                               }}-@ {{
                                 data.item.eventcity
                               }}
-                            </v-list-item-subtitle>
+                            </v-list-item-subtitle> -->
                           </v-list-item-content>
                         </template>
                   </v-autocomplete>

@@ -75,8 +75,8 @@ class AcaEventViewSet(viewsets.ModelViewSet):
 
     @action(detail=False, methods=['get'])
     def get_years(self, request):
-        years = set([i.year for i in models.AcaEvent.objects.filter().order_by('-eventdatetime').values_list('eventdatetime', flat=True)])
-        return Response(sorted(years))
+        years = set([i.year if i and i.year else None for i in models.AcaEvent.objects.filter().order_by('-eventdatetime').values_list('eventdatetime', flat=True)])
+        return Response(sorted(years, reverse=True))
 
     @action(detail=True, methods=['get'])
     def get_groups(self, request,pk):
@@ -91,6 +91,16 @@ class AcaEventViewSetNopage(viewsets.ModelViewSet):
     search_fields = ['name', 'description']
     http_method_names = ['get']
     filterset_class = Customfilters.EventFilter
+
+    def get_queryset(self):
+        query = super().get_queryset()
+        query_set = []
+        try:
+            for i in query:
+                if i.resultset.all().count() >= 1:
+                    query_set.append(i.id)
+        except Exception as e:print(e)
+        return query.filter(id__in=query_set)
 
     @action(detail=False, methods=['get'])
     def get_years(self, request):
