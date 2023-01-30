@@ -8,6 +8,8 @@ from rest_framework.response import Response
 from . import (models, serializers, Customfilters)
 from rest_framework import viewsets, mixins, filters
 
+from .export import download_csv
+
 
 class AcaUserViewSet(viewsets.ModelViewSet):
     serializer_class = serializers.AcaUserSerailizers
@@ -51,6 +53,13 @@ class AcaPointscompetitionresultViewSet(viewsets.ModelViewSet):
     filter_backends = [DjangoFilterBackend, filters.OrderingFilter, filters.SearchFilter]
     filterset_fields = [field.name for field in models.AcaPointscompetitionresult._meta.fields]
     pagination_class = None
+
+    def list(self, request, *args, **kwargs):
+        print(request.GET)
+        response = super().list(request, *args, **kwargs)
+        if request.GET.get('export', None) == 'csv':
+            return download_csv(response.data, filename='Export', type=request.GET.get("type"))
+        return response
 
 class HomeBannerImageiewSet(viewsets.ModelViewSet):
     serializer_class = serializers.HomeBannerImageSerailizers
@@ -139,3 +148,10 @@ class AcaResultNoPageViewSet(viewsets.ModelViewSet):
         # return Response(serializers.AcaResultsetSerailizers(self.get_object().resultset.all(), many=True,
         #                                                     context={'request': request}).data)
         return Response([])
+
+    def list(self, request, *args, **kwargs):
+        print(request.GET)
+        response = super().list(request, *args, **kwargs)
+        if request.GET.get('export', None) == 'csv':
+            return download_csv(response.data, filename='Export', type=request.GET.get("type"))
+        return response
