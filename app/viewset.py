@@ -101,15 +101,15 @@ class AcaEventViewSetNopage(viewsets.ModelViewSet):
     http_method_names = ['get']
     filterset_class = Customfilters.EventFilter
 
-    def get_queryset(self):
-        query = super().get_queryset()
-        query_set = []
-        try:
-            for i in query:
-                if i.resultset.all().count() >= 1:
-                    query_set.append(i.id)
-        except Exception as e:print(e)
-        return query.filter(id__in=query_set)
+    # def get_queryset(self):
+    #     query = super().get_queryset()
+    #     query_set = []
+    #     try:
+    #         for i in query:
+    #             if i.resultset.all().count() >= 1:
+    #                 query_set.append(i.id)
+    #     except Exception as e:print(e)
+    #     return query.filter(id__in=query_set)
 
     @action(detail=False, methods=['get'])
     def get_years(self, request):
