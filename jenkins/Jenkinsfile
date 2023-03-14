@@ -20,7 +20,6 @@ pipeline {
             agent {
             dockerfile {
                     dir './deployment'
-                    label 'test'
                  }
              }
             stages {
