@@ -1,26 +1,25 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
-            agent {
-                docker {
-                    image 'node:16.3.0-alpine'
-                    // Run the container on the node specified at the
-                    // top-level of the Pipeline, in the same workspace,
-                    // rather than on a new node entirely:
-                    reuseNode true
-                }
-            }
-            steps {
-                sh 'npm install'
-                sh 'npm run build'
-            }
-        }
+//         stage('Build') {
+//             agent {
+//                 docker {
+//                     image 'node:16.3.0-alpine'
+//                     // Run the container on the node specified at the
+//                     // top-level of the Pipeline, in the same workspace,
+//                     // rather than on a new node entirely:
+//                     reuseNode true
+//                 }
+//             }
+//             steps {
+//                 sh 'npm install'
+//                 sh 'npm run build'
+//             }
+//         }
         stage('Deploy') {
             agent {
             dockerfile {
                     dir './deployment/Dockerfile'
-                    label 'wrh-brac:jenkins'
                  }
              }
             stages {
