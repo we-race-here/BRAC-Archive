@@ -12,8 +12,10 @@ pipeline {
                 }
             }
             steps {
-                sh 'npm install'
-                sh 'npm run build'
+                dir('frontendv2') {
+                    sh 'yarn install'
+                    sh 'yarn run build'
+                }
             }
         }
         stage('Prep') {
@@ -24,38 +26,23 @@ pipeline {
         }
         stage('Deploy') {
          steps {
-         dir('deployment') {
+                dir('deployment') {
                          sh 'docker build -t wrh-brac:prd -f Dockerfile .'
                          script {
-                          try {
+                        try {
                               sh 'docker rm -f wrh-brac'
-                          } catch (Exception e) {
+                        } catch (Exception e) {
                               echo 'Exception occurred: ' + e.toString()
-                          }
-                          try {
-                              sh ' docker run -dt --restart=always -p 8010:8010 --name wrh-brac wrh-brac:prd'
-                          } catch (Exception e) {
-                              echo 'Exception occurred: ' + e.toString()
-                          }
                         }
-
-
-         }
+                        try {
+                              sh ' docker run -dt --restart=always -p 8010:8010 --name wrh-brac wrh-brac:prd'
+                        } catch (Exception e) {
+                              echo 'Exception occurred: ' + e.toString()
+                        }
+                    }
+                }
 
             }
-//             agent {
-//             dockerfile {
-//                     dir './deployment'
-//                     reuseNode true
-//                  }
-//              }
-//             stages {
-//                 stage('Test') {
-//                     steps {
-//                         sh 'node --version'
-//                     }
-//                 }
-//             }
         }
     }
 }
