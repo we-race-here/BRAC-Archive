@@ -25,7 +25,7 @@ pipeline {
         stage('Deploy') {
          steps {
          dir('deployment') {
-                         sh './build.sh'
+                         sh 'docker build -t wrh-brac:prd -f Dockerfile .'
 
          }
 
