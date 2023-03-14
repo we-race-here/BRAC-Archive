@@ -25,6 +25,7 @@ pipeline {
         stage('Deploy') {
          steps {
                 sh 'cd deployment'
+                sh 'ls'
                 sh 'build.sh'
             }
 //             agent {
