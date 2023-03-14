@@ -16,7 +16,7 @@ pipeline {
 //                 sh 'npm run build'
 //             }
 //         }
-        stage('Deploy') {
+        stage('Prep') {
             steps {
                 sh 'touch .env'
             }
