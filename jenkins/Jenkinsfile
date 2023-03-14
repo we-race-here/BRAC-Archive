@@ -19,7 +19,7 @@ pipeline {
             steps {
                 sh 'cd deployment'
                 sh 'docker build -t wrh-brac:prd -f Dockerfile .'
-                sh "if [ `echo $?` == 0 ]; then docker rm -f wrh-brac docker run -dt --restart=always -p 8010:8010 --name wrh-brac wrh-brac:prd fi"
+//                 sh "if [ `echo $?` == 0 ]; then docker rm -f wrh-brac docker run -dt --restart=always -p 8010:8010 --name wrh-brac wrh-brac:prd fi"
             }
         }
     }
