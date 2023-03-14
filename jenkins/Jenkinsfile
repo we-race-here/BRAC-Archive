@@ -23,19 +23,22 @@ pipeline {
             }
         }
         stage('Deploy') {
-            agent {
-            dockerfile {
-                    dir './deployment'
-                    reuseNode true
-                 }
-             }
-            stages {
-                stage('Test') {
-                    steps {
-                        sh 'node --version'
-                    }
-                }
+         steps {
+                sh 'docker build -t wrh-brac:prd -f Dockerfile .'
             }
+//             agent {
+//             dockerfile {
+//                     dir './deployment'
+//                     reuseNode true
+//                  }
+//              }
+//             stages {
+//                 stage('Test') {
+//                     steps {
+//                         sh 'node --version'
+//                     }
+//                 }
+//             }
         }
     }
 }
