@@ -17,6 +17,11 @@ pipeline {
 //             }
 //         }
         stage('Deploy') {
+            steps {
+                sh 'touch .env'
+            }
+        }
+        stage('Deploy') {
             agent {
             dockerfile {
                     dir './deployment'
