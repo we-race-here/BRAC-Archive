@@ -21,6 +21,7 @@ pipeline {
         stage('Prep') {
             steps {
                 sh 'cp .env ./deployment/'
+                sh 'cp -rf frontendv2/dist ./deployment/'
                 sh 'cp requirement.txt ./deployment/'
             }
         }
