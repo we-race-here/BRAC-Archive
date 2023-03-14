@@ -18,7 +18,7 @@ pipeline {
 //         }
         stage('Prep') {
             steps {
-                sh 'touch ./deployment/.env'
+                sh 'cp .env ./deployment/'
                 sh 'cp requirement.txt ./deployment/'
             }
         }
