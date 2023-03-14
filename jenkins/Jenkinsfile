@@ -24,9 +24,11 @@ pipeline {
         }
         stage('Deploy') {
          steps {
-                sh 'cd deployment'
-                sh 'ls'
-                sh 'build.sh'
+         dir('deployment') {
+                         sh 'build.sh'
+
+         }
+
             }
 //             agent {
 //             dockerfile {
