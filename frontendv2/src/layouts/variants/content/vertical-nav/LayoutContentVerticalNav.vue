@@ -36,7 +36,7 @@
     <!-- Slot: Footer -->
     <template #footer>
       <div class="d-flex justify-space-between">
-        <span>COPYRIGHT &copy; {{ new Date().getFullYear() }} Bicycle Racing Association of Colorado, All rights Reserved..</span>
+        <span>COPYRIGHT &copy; {{ new Date().getFullYear() }} Bicycle Racing Association of Colorado, All rights Reserved</span>
         <div class="d-flex align-center">
           <span>Get connected with us on social networks!</span>
          <a href="mailto:info@bicyclecolorado.org" class="text-decoration-none"
