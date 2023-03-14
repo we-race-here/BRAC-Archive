@@ -25,6 +25,7 @@ pipeline {
             agent {
             dockerfile {
                     dir './deployment'
+                    reuseNode true
                  }
              }
             stages {
