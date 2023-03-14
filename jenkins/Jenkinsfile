@@ -19,6 +19,7 @@ pipeline {
         stage('Prep') {
             steps {
                 sh 'touch ./deployment/.env'
+                sh 'touch ./deployment/requirement.txt'
             }
         }
         stage('Deploy') {
