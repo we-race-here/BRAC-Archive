@@ -26,7 +26,19 @@ pipeline {
          steps {
          dir('deployment') {
                          sh 'docker build -t wrh-brac:prd -f Dockerfile .'
-                         sh "if [ `echo $?` == 0 ]; then docker rm -f wrh-brac docker run -dt --restart=always -p 8010:8010 --name wrh-brac wrh-brac:prd fi"
+                         script {
+                          try {
+                              sh 'docker rm -f wrh-brac'
+                          } catch (Exception e) {
+                              echo 'Exception occurred: ' + e.toString()
+                          }
+                          try {
+                              sh ' docker run -dt --restart=always -p 8010:8010 --name wrh-brac wrh-brac:prd'
+                          } catch (Exception e) {
+                              echo 'Exception occurred: ' + e.toString()
+                          }
+                        }
+
 
          }
 
