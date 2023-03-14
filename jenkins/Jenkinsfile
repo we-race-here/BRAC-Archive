@@ -19,7 +19,7 @@ pipeline {
         stage('Deploy') {
             agent {
             dockerfile {
-                    dir './deployment/Dockerfile'
+                    dir './deployment'
                  }
              }
             stages {
