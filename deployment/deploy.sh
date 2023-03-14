@@ -1,12 +1,14 @@
 #!/bin/bash
 git clone https://github.com/we-race-here/BRAC-Archive.git /home/jenkins/wrh-brac
 cd /home/jenkins/wrh-brac
-git checkout v2
+git checkout master
 mkdir -p media
 
 sudo cp -rf ../nginx.conf  /etc/nginx/nginx.conf
 sudo cp -rf ../default.conf  /etc/nginx/sites-available/default
 cp ../.env /home/jenkins/wrh-brac/wrh_brac/
+cp -rf ../dist /home/jenkins/wrh-brac/
+
 #cp ../ca-certificate.crt /home/jenkins/zp-results/
 pip install uwsgi
 python manage.py collectstatic

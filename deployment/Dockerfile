@@ -40,6 +40,8 @@ COPY ./requirement.txt /home/jenkins/
 
 COPY .env /home/jenkins/
 
+COPY dist /home/jenkins/dist
+
 # COPY ca-certificate.crt /home/jenkins/
 
 COPY nginx.conf /home/jenkins/
