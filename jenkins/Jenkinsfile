@@ -20,6 +20,8 @@ pipeline {
             agent {
             dockerfile {
                     dir './deployment'
+                    label 'wrh-brac:prd'
+
                  }
              }
             stages {
