@@ -40,7 +40,6 @@ COPY ./requirement.txt /home/jenkins/
 
 COPY .env /home/jenkins/
 
-COPY dist /home/jenkins/dist
 
 # COPY ca-certificate.crt /home/jenkins/
 
@@ -61,5 +60,7 @@ RUN pip install uwsgi
 RUN git config --global credential.helper store
 
 COPY --chown=jenkins:jenkins deploy.sh /home/jenkins/
+
+COPY dist /home/jenkins/dist
 
 ENTRYPOINT ["/bin/sh","/home/jenkins/deploy.sh"]
