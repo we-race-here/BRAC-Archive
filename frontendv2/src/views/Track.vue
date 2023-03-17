@@ -74,7 +74,7 @@
                   hide-details
                 ></v-text-field> -->
                   <!-- <b>RACE SUMMARY:</b> -->
-                  <v-btn-toggle v-show="false" v-model="summaryBy" color="primary" dense class="ml-2" borderless>
+                  <v-btn-toggle v-show="false" v-model="summaryBy"  dense class="ml-2" borderless>
                     <v-btn >
                       <span class="hidden-sm-and-down">Summary By RaceGroup</span>
 

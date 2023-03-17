@@ -35,7 +35,7 @@
                   ></v-autocomplete
                 ></v-col>
                 <v-col cols="12" sm="1">
-                  <v-btn small color="primary" target="__blank__" :href="`/AcaPointscompetitionresult/?pointscompetitionid=${RoadCupCategorySelector.pointscompetitionid}&racegroupid=${RoadCupCategorySelector.racegroupid}&export=csv&type=roadcupteam`" v-if="RoadCupCategorySelector">Export CSV</v-btn>
+                  <v-btn small  target="__blank__" :href="`/AcaPointscompetitionresult/?pointscompetitionid=${RoadCupCategorySelector.pointscompetitionid}&racegroupid=${RoadCupCategorySelector.racegroupid}&export=csv&type=roadcupteam`" v-if="RoadCupCategorySelector">Export CSV</v-btn>
                 </v-col>
               </v-row>
               <v-row>

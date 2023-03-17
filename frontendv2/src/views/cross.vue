@@ -64,7 +64,7 @@
                   ></v-autocomplete>
                 </v-col>
                  <v-col cols="12" sm="1">
-                  <v-btn small color="primary" target="__blank__" :href="`/AcaResultNoPage/?resultsetid=${GroupSelcted}&export=csv&type=road`" v-if="GroupSelcted">Export CSV</v-btn>
+                  <v-btn small  target="__blank__" :href="`/AcaResultNoPage/?resultsetid=${GroupSelcted}&export=csv&type=road`" v-if="GroupSelcted">Export CSV</v-btn>
                 </v-col>
               </v-row>
               <v-row class="mt-2">
@@ -77,7 +77,7 @@
                   hide-details
                 ></v-text-field> -->
                   <!-- <b>RACE SUMMARY:</b> -->
-                  <v-btn-toggle v-show="false" v-model="summaryBy" color="primary" dense class="ml-2" borderless>
+                  <v-btn-toggle v-show="false" v-model="summaryBy"  dense class="ml-2" borderless>
                     <v-btn >
                       <span class="hidden-sm-and-down">Summary By RaceGroup</span>
 
