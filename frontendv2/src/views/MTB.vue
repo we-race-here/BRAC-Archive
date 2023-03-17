@@ -2,15 +2,15 @@
   <div>
     <v-row>
       <v-col cols="12" sm="12">
-        <v-card outlined color="rgb( 230, 230, 230 )">
+        <v-card >
           <v-card-title> </v-card-title>
           <v-card-text>
-            <p class="text-h5">MOUNTAIN RESULTS</p>
-            <div class="pl-3 mt-3">
-              <h3 style="border-left: 5px solid #1890ff" class="pl-3">
+            <!-- <p class="text-h5">MOUNTAIN RESULTS</p> -->
+            <div >
+              <!-- <h3 style="border-left: 5px solid #1890ff" class="pl-3">
                 BRAC MTB RESULTS
 
-              </h3>
+              </h3> -->
               <v-row class="ml-3 mt-2">
                 <v-col cols="12" sm="2">
                   <v-autocomplete

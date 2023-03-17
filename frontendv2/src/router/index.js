@@ -126,6 +126,15 @@ const routes = [
     },
   },
   {
+    path: '/iframe',
+    name: 'IFrame Version',
+    component: () => import('@/views/iframe.vue'),
+    meta: {
+      layout: 'blank',
+      resource: 'Public',
+    },
+  },
+  {
     path: '*',
     redirect: 'error-404',
   },

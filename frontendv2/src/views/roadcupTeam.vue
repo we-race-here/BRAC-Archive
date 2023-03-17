@@ -2,11 +2,10 @@
   <div>
     <v-row>
       <v-col cols="12" sm="12">
-        <v-card outlined color="rgb( 230, 230, 230 )">
-          <v-card-title> </v-card-title>
+        <v-card  >
           <v-card-text>
-            <p class="text-h5">Road Team Cup</p>
-            <div class="pl-3 mt-3">
+            <!-- <p class="text-h5">Road Team Cup</p> -->
+            <div >
               <h3 v-if="RoadCupSelected" style="border-left: 5px solid #1890ff" class="pl-3">
                 {{ RoadCupSelected.description }}
               </h3>
@@ -15,6 +14,7 @@
                   ><v-autocomplete
                     v-model="RoadCupSelected"
                     dense
+                    v-if="RoadCupSelected"
                     :hint="`${RoadCupSelected.lastrun ? `Latest refresh to ${RoadCupSelected.description} on ${RoadCupSelected.lastrun}` : ''}`"
                     persistent-hint
                     label="Road Cup"

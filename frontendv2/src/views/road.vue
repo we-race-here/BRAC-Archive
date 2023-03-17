@@ -2,12 +2,11 @@
   <div>
     <v-row>
       <v-col cols="12" sm="12">
-        <v-card outlined color="rgb( 230, 230, 230 )">
-          <v-card-title> </v-card-title>
+        <v-card elevation="0">
           <v-card-text>
-            <p class="text-h5">Road</p>
-            <div class="pl-3 mt-3">
-              <h3 style="border-left: 5px solid #1890ff" class="pl-3">BRAC ROAD RESULTS</h3>
+            <!-- <p class="text-h5">Road</p> -->
+            <div >
+              <!-- <h3 style="border-left: 5px solid #1890ff" class="pl-3">BRAC ROAD RESULTS</h3> -->
               <v-row class="ml-3 mt-2">
                 <v-col cols="12" sm="2">
                   <v-autocomplete

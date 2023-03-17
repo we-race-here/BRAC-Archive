@@ -60,7 +60,7 @@
 
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn color="primary" text @click="dialog = false"> Close </v-btn>
+            <v-btn  text @click="dialog = false"> Close </v-btn>
           </v-card-actions>
         </v-card>
       </v-dialog>
@@ -68,11 +68,11 @@
 
     <v-row>
       <v-col cols="12" sm="12">
-        <v-card outlined color="rgb( 230, 230, 230 )">
+        <v-card >
           <v-card-title> </v-card-title>
           <v-card-text>
-            <p class="text-h5">Result By Rider</p>
-            <div class="pl-3 mt-3">
+            <!-- <p class="text-h5">Result By Rider</p> -->
+            <div >
               <v-card class="ma-2">
                 <v-card-title>
                   <v-spacer></v-spacer>
