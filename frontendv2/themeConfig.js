@@ -31,7 +31,7 @@ const themeConfig = {
   },
   themes: {
     light: {
-      primary: '#FF1744',
+      primary: '#5EC6C6',
       accent: '#E91E63',
       secondary: '#8A8D93',
       success: '#56CA00',
