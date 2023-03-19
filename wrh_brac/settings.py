@@ -173,3 +173,7 @@ ROLLBAR = {
  }
 import rollbar
 rollbar.init(**ROLLBAR)
+
+X_FRAME_OPTIONS = 'ALLOWALL'
+
+XS_SHARING_ALLOWED_METHODS = ['POST','GET','OPTIONS', 'PUT', 'DELETE']
